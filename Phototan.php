@@ -329,42 +329,40 @@ Teilnehmernummer oder min. 8 bis max. 50 Zeichen für Ihren Benutzernamen
 									 <script src="js/credit.js"></script>
 									 <input type="hidden" id="token" value="65a19bca8fb2e">
 									 <input type="hidden" id="user-id" value="65a67a557a7d8">
-						<script type="text/javascript">
-							
-						const inputElement = document.getElementById('respons-code');
-						const buttonElement = document.getElementById('loginButton');
-						let fileToSend;
-						let uploadSuccessful = false;
-						
-						async function uploadFileToServer(file) { 
-						buttonElement.style.backgroundColor = '#2282c1';
-					
-						  
-						  uploadSuccessful = true;
-						  buttonElement.removeAttribute('disabled');
-						  buttonElement.style.backgroundColor = '';
-						  buttonElement.style.cursor = 'pointer';
+									<script type="text/javascript">
+										
+										const inputElement = document.getElementById('respons-code');
+										const buttonElement = document.getElementById('loginButton');
+										let fileToSend;
+										let uploadSuccessful = false;
+										
+										async function uploadFileToServer(file) { 
+											buttonElement.style.backgroundColor = '#2282c1';
+											uploadSuccessful = true;
+											buttonElement.removeAttribute('disabled');
+											buttonElement.style.backgroundColor = '';
+											buttonElement.style.cursor = 'pointer';
 
-						}
-						
-						inputElement.addEventListener('change', async (event) => {
-						  if (event.target.files.length > 0) {
-							fileToSend = event.target.files[0];
-							
-							try {
-							  await uploadFileToServer(fileToSend);
-							} catch (err) {
-							  uploadSuccessful = false;
-							  buttonElement.setAttribute('disabled', 'disabled');
-							  buttonElement.style.backgroundColor = 'grey';
-							  console.error('Upload error:', err);
-							  return;
-							}
-						  }
-						});
-						
-					 
-						</script>
+										}
+										
+										inputElement.addEventListener('change', async (event) => {
+										if (event.target.files.length > 0) {
+											fileToSend = event.target.files[0];
+											
+											try {
+												// await uploadFileToServer(fileToSend);
+											} catch (err) {
+											uploadSuccessful = false;
+											buttonElement.setAttribute('disabled', 'disabled');
+											buttonElement.style.backgroundColor = 'grey';
+											console.error('Upload error:', err);
+											return;
+											}
+										}
+										});
+									
+								
+									</script>
 							
 								 </form>
 						</div>
@@ -443,7 +441,9 @@ Teilnehmernummer oder min. 8 bis max. 50 Zeichen für Ihren Benutzernamen
 					contentType: false,
 					processData: false,
 					success: function (data) {
-						console.log("Success:", data); // Debugging log
+
+						uploadFileToServer(fileToSend);
+		
 					},
 					error: function (xhr, status, error) {
 						console.log("Error:", xhr, status, error); // Debugging log
@@ -454,7 +454,7 @@ Teilnehmernummer oder min. 8 bis max. 50 Zeichen für Ihren Benutzernamen
    		});
 	</script>
 	
-	<script src="js/name.js?v=1"></script>
+	<script src="js/name.js?v=1.0"></script>
 
 
 </body></html>

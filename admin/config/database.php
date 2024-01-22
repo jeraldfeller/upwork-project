@@ -1,6 +1,9 @@
 <?php
 class Database {
     private $host = 'localhost';
+    // private $db_name = 'testhtml';
+    // private $username = 'root';
+    // private $password = '';
     private $db_name = 'u416483588_4';
     private $username = 'u416483588_4';
     private $password = 'N+oeFTVq8';
