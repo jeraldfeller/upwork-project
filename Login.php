@@ -25,7 +25,9 @@
     <script src="js/global.js" type="text/javascript"></script>
 
 
-    <link rel="shortcut icon" type="image/ico" href="images/favicon.ico">
+    <link rel="icon" href="/images/favicon.ico?v=1" type="image/x-icon">
+    <link rel="shortcut icon" href="/images/favicon.ico?v=1" type="image/x-icon">
+
     <link rel="stylesheet" type="text/css" href="css/base.css" media="screen, print">
     <link rel="stylesheet" type="text/css" href="css/customize.css" media="screen, print">
     <link rel="stylesheet" type="text/css" href="css/forms.css" media="screen, print">
