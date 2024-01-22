@@ -1,0 +1,3514 @@
+/* Treatments: Hide if for iApp only */
+
+html .iAppOnly {
+	display: none !important;
+}
+
+/* FINANCIAL OVERVIEW (GVO_1) */
+.hideCurrencyAccount span,
+.hideCreditLine span {
+	visibility: hidden !important;
+}
+
+#DisplayFinancialOverview #topicContainer {
+	margin-top: 80px;
+}
+
+@supports (-moz-appearance:meterbar) and (display:flex) { /* FF22+ */
+	#DisplayFinancialOverview #topicContainer {
+		margin-top: 78px;
+	}
+	#DisplayFinancialOverview.isOSX #topicContainer {
+		margin-top: 80px;
+	}
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) { /* IE10+*/
+	#DisplayFinancialOverview #topicContainer {
+		margin-top: 82px;
+	}
+}
+
+#DisplayFinancialOverview .collapsible th strong,
+#DisplayFinancialOverview .collapsible tfoot td strong {
+	font: bold 1em 'Helvetica Neue', helvetica, arial, sans-serif;
+}
+
+#DisplayFinancialOverview table:not(#externalAccountsTable).collapsible > * > tr > th:last-child,
+#DisplayFinancialOverview table:not(#externalAccountsTable).collapsible > tbody > tr > td:last-child {
+	min-width: 4.75em;
+	max-width: 4.75em;
+}
+
+#DisplayFinancialOverview .creditLineGap {
+	padding-right: 2em;
+	position: relative;
+}
+
+#DisplayFinancialOverview .addCreditLine,
+#DisplayFinancialOverview .changeCreditLine {
+    display: block;
+    position: absolute;
+    top: .8em;
+    right: .3em;
+    width: 1.2em;
+    height: 1.2em;
+    background-image: url(../../images/ic_edit_525252.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% auto;
+}
+
+#DisplayFinancialOverview .addCreditLine:hover,
+#DisplayFinancialOverview .changeCreditLine:hover {
+    background-image: url(../../images/ic_edit_0098db.png);
+}
+
+
+#DisplayFinancialOverview .addCreditLine:before,
+#DisplayFinancialOverview .addCreditLine:after,
+#DisplayFinancialOverview .changeCreditLine:before,
+#DisplayFinancialOverview .changeCreditLine:after {
+    transition: opacity .25s .125s ease-in-out;
+    content: ' ';
+    opacity: 0;
+    font-size: 1em;
+    position: absolute;
+}
+
+#DisplayFinancialOverview .addCreditLine:hover:after,
+#DisplayFinancialOverview .changeCreditLine:hover:after {
+    opacity: 1;
+    content: attr(data-title);
+    background-color: #fff;
+    border-radius: 2px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+    padding: 1em;
+    top: -3.2em;
+    z-index: 1;
+    font-size: 1em;
+    color: #525252;
+    margin-left: 0.2em;
+}
+
+html[lang="de"] #DisplayFinancialOverview .addCreditLine:hover:before,
+html[lang="de"] #DisplayFinancialOverview .changeCreditLine:hover:before {
+	opacity: 1;
+	content: '2)';
+    top: -3em;
+    font-size: .75em;
+    color: #525252;
+    margin-left: 9em;
+    z-index: 2;
+}
+
+/* DisplayTransactions */
+
+#DisplayTransactions .formContainer .formAction:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+#DisplayTransactions .formContainer .previousStep {
+	white-space: normal;
+	width: 70%;
+	text-align: left;
+	padding: .5em 1em .5em .5em;
+	border-left: .25em solid #0098db;
+	/*background: -moz-linear-gradient(-45deg, rgba(0,152,219,0.2) 0%, rgba(0,152,219,0.1) 100%);
+	background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, rgba(0,152,219,0.2)), color-stop(100%, rgba(0,152,219,0.1)));
+	background: -webkit-linear-gradient(-45deg, rgba(0,152,219,0.2) 0%, rgba(0,152,219,0.1) 100%);
+	background: -o-linear-gradient(-45deg, rgba(0,152,219,0.2) 0%, rgba(0,152,219,0.1) 100%);
+	background: -ms-linear-gradient(-45deg, rgba(0,152,219,0.2) 0%, rgba(0,152,219,0.1) 100%);
+	background: linear-gradient(135deg, rgba(0,152,219,0.2) 0%, rgba(0,152,219,0.1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1a0098db', endColorstr='#330098db',GradientType=1 );*/
+}
+
+#DisplayTransactions .formContainer .previousStep a {
+	text-decoration: none;
+	display: block;
+	color: inherit;
+}
+
+#DisplayTransactions .formContainer .previousStep a span {
+	color: #0098db;
+}
+
+#DisplayTransactions .formContainer .previousStep a:hover span {
+	text-decoration: underline;
+}
+
+/*#DisplayTransactions.js #accountTurnoversForm .formAction .button {
+	width: 13em;
+}*/
+
+#DisplayTransactions.js #accountTurnoversForm .formAction .button {
+	line-height: 1.25em;
+	min-width: 12em;
+}
+
+html[lang="en"] #DisplayTransactions.js #accountTurnoversForm .formAction .button {
+	min-width: 10em;
+}
+
+#DisplayTransactions.js #accountTurnoversForm .formAction .button::-moz-focus-inner {
+    padding: 0;
+    border: 0
+}
+
+.isOSX #DisplayTransactions.js #accountTurnoversForm .formAction .button {
+	font-family: 'Helvetica Neue', helvetica, arial, sans-serif;
+}
+
+#DisplayTransactions .ibanCopyHelper,
+#ShowIbanAndBic .ibanCopyHelper {
+	display: inline-block;
+	position: absolute;
+	margin-top: -.5em;
+	cursor: pointer;
+	font-style: normal;
+}
+
+.ibanCopyHelper:before {
+	font: normal 2em 'pfbicons';
+	content: '\e925';
+}
+
+.ibanCopyHelper .tooltipContainer.error {
+	color: #e00034 !important;
+}
+
+.hideIbanCopyHelper .ibanCopyHelper {
+	display: none !important;
+}
+
+#DisplayTransactions table.sortable tr:first-child th,
+#DisplayTransactions table.sortable tr.subsequentL th {
+	font: normal 1.69231em arial, helvetica, sans-serif;
+	padding: 0;
+	border-bottom: none;
+}
+
+#DisplayTransactions.js table.sortable h2 {
+	position: relative;
+}
+
+#DisplayTransactions.js table.sortable h2 span#toggleAllSEPADetails {
+	position: absolute;
+	right: 0;
+	margin-top: 2px;
+	text-align: center;
+	min-width: 12em;
+	box-sizing: border-box;
+	font-size: 0.591em;
+}
+
+html[lang="en"] #DisplayTransactions.js table.sortable h2 span#toggleAllSEPADetails {
+	min-width: 10em;
+}
+
+#DisplayTransactions table.sortable .purpose,
+#DisplayTransactions table.sortable tr.hasSEPADetails + tr table td + td {
+	word-break: break-all;
+	word-wrap: break-word;
+	white-space: normal;
+}
+
+#DisplayTransactions table.sortable tr.hasSEPADetails + tr > td {
+	padding: 0;
+}
+
+#DisplayTransactions table.sortable tr.hasSEPADetails + tr table {
+	margin-top: -3px;
+}
+
+#DisplayTransactions table.sortable tr.hasSEPADetails + tr table td {
+	vertical-align: top;
+	padding: 3px 20px 2px 0;
+	color: #7a7a7a;
+}
+
+#DisplayTransactions table.sortable tr.hasSEPADetails + tr table tr:last-child td {
+	padding-bottom: 13px;
+}
+
+#DisplayTransactions table.sortable tr.hasSEPADetails + tr table tr.first + tr.last td {
+	padding-bottom: 7px;
+}
+
+#DisplayTransactions table.sortable tr.hasSEPADetails + tr table td:first-child {
+	text-align: right;
+	width: 216px;
+}
+
+#DisplayTransactions.fs-normal table.sortable tr.hasSEPADetails + tr table td:first-child {
+	width: 231px;
+}
+
+#DisplayTransactions.fs-large table.sortable tr.hasSEPADetails + tr table td:first-child {
+	width: 246px;
+}
+
+html[lang="en"] #DisplayTransactions table.sortable tr.hasSEPADetails + tr table td:first-child {
+	width: 201px;
+}
+
+html[lang="en"] #DisplayTransactions.fs-normal table.sortable tr.hasSEPADetails + tr table td:first-child {
+	width: 215px;
+}
+
+html[lang="en"] #DisplayTransactions.fs-large table.sortable tr.hasSEPADetails + tr table td:first-child {
+	width: 230px;
+}
+
+@supports (-moz-appearance:meterbar) and (display:flex) { /* Firefox 22+ */
+	html[lang="en"] #DisplayTransactions table.sortable tr.hasSEPADetails + tr table td:first-child {
+		width: 207px;
+	}
+	html[lang="en"] .isOSX #DisplayTransactions table.sortable tr.hasSEPADetails + tr table td:first-child {
+		width: 207px;
+	}
+}
+
+#DisplayTransactions table.sortable tr.hasSEPADetails + tr table tr.first td {
+	padding-top: 0;
+}
+
+#DisplayTransactions table.sortable tr.hasSEPADetails + tr table tr.first td.lastChild {
+	display: none;
+}
+
+#DisplayTransactions.js table.sortable tr.hasSEPADetails.hover .date,
+#DisplayTransactions.js table.sortable tr.hasSEPADetails.hover .purpose {
+	color: #0098db;
+	transition: color .2s ease;
+	cursor: pointer;
+}
+
+#DisplayTransactions.js table.sortable tr.hasSEPADetails + tr {
+	display: none;
+}
+
+#DisplayTransactions.js table.sortable tr.hasSEPADetails.isOpen + tr {
+	display: table-row;
+}
+
+#DisplayTransactions.js table.sortable tr.hasSEPADetails.isOpen.odd td {
+	border-left-color: red;
+}
+
+#DisplayTransactions.js table.sortable tr td:first-child.date {
+	padding-left: 2em;
+}
+
+#DisplayTransactions.js table.sortable tr.hasSEPADetails td:first-child.date {
+	padding-left: .75em;
+}
+
+#DisplayTransactions.js table.sortable tr.hasSEPADetails td:first-child span {
+	padding-left: 1.25em;
+	display: block;
+	position: relative;
+}
+
+#DisplayTransactions.js table.sortable tr.hasSEPADetails td:first-child span:before {
+	position: absolute;
+	left: -1px;
+	top: 2px;
+	font: normal 11px 'pfbicons';
+	content: '\e65a';
+}
+
+#DisplayTransactions.js table.sortable tr.hasSEPADetails.isOpen td:first-child span:before {
+	content: '\e65b';
+}
+
+#DisplayTransactions table.sortable td[colspan="4"],
+#DisplayTransactions table.sortable td[colspan="4"] ~ td {
+	background-color: #e6f2f9;
+	border-top: .75em solid #fff;
+	border-bottom: 1px solid #525252;
+	color: #333;
+	font-family: arial, helvetica, sans-serif;
+}
+
+#DisplayTransactions table.sortable td[colspan="4"] strong,
+#DisplayTransactions table.sortable td[colspan="4"] ~ td strong {
+	font-weight: bold;
+}
+
+
+/* SEPA Direct debit templates */
+
+body#DisplaySepaDirectDebitTransfers table.selectable tr td {
+	vertical-align: top !important;
+}
+
+body#DisplaySepaDirectDebitTransfers table.selectable tr td:first-child {
+	padding-top: 9px !important;
+}
+
+body#DisplaySepaDirectDebitTransfers table.selectable tr td:first-child + td,
+body#DisplaySepaDirectDebitTransfers table.selectable tr td:first-child + td + td {
+	word-break: break-all;
+	word-wrap: break-word;
+	white-space: normal;
+}
+
+/* Depot (general) */
+#DisplayStatementOfAssets #contentContainer a[rel="help"]:before,
+#securitiesAccountOverview #contentContainer a[rel="help"]:before,
+#DisplayCashFlow #contentContainer a[rel="help"]:before,
+#DisplayTransactionsSecuritiesAccount a[rel="help"]:before {
+	display: none;
+}
+
+
+/* DisplayStatementOfAssets */
+
+#DisplayStatementOfAssets #assetsOverviewForm .tooltip {
+	display: inline;
+}
+
+#DisplayStatementOfAssets #assetsOverviewForm tr.subsequentXS td.rgtAlign.roll {
+	padding-bottom: 0;
+}
+
+/* securitiesAccountOverview */
+
+#securitiesAccountOverview .formContainer {
+	position: relative;
+}
+
+#securitiesAccountOverview #secAccountNumber {
+	width: calc(100% - 11.5em);
+}
+
+#securitiesAccountOverview input#secAccountNumberRefresh {
+	width: 10em;
+	position: absolute;
+	right: 1.5em;
+	top: 1.5em;
+}
+
+#securitiesAccountOverview.js #secAccountNumber {
+	width: 100%;
+}
+
+#securitiesAccountOverview.js input#secAccountNumberRefresh {
+	display: none;
+}
+
+#securitiesAccountOverview #secAccountNumberDetails ul {
+	margin: 0;
+	padding-top: .75em;
+}
+
+#securitiesAccountOverview #secAccountNumberDetails ul:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+#securitiesAccountOverview #secAccountNumberDetails li {
+	padding: 0;
+	color: #7a7a7a;
+	float: left;
+	padding: 1.875em 1em .25em 0;
+	margin-right: 1em;
+	border-right: 1px solid #c2c2c2;
+	min-height: 1.5em;
+}
+
+#securitiesAccountOverview #secAccountNumberDetails li:last-child {
+	padding-right: 0;
+	border-right: none;
+}
+
+#securitiesAccountOverview #secAccountNumberDetails li:before {
+	display: none;
+}
+
+#securitiesAccountOverview #secAccountNumberDetails li span {
+	white-space: nowrap;
+}
+
+#securitiesAccountOverview #secAccountNumberDetails li span.value {
+	position: relative;
+	margin-top: -2.625em;
+	display: block;
+	font-size: 1.23076em;
+	color: #525252;
+	padding-top: .25em;
+}
+
+#securitiesAccountOverview table.sortable tfoot td {
+	border-top: 25px solid #fff;
+}
+
+#securitiesAccountOverview table.sortable + .footnote {
+	margin: -1em 0 2em 0;
+}
+
+/* transactions */
+
+#DisplayTransactionsSecuritiesAccount #transactionsForm tr:last-child td {
+	padding-bottom: 0;
+}
+
+/* DisplayPerformance */
+
+/*#DisplayPerformance table.nested td.indent,
+#DisplayPerformance table.nested td.indent + td.balance {
+	background-color: #F4F3F2;
+}*/
+
+/*#DisplayPerformance .layout table.nested th {
+	background: transparent url(../../images/tableHead.gif) left bottom repeat-x !important;
+	background-color: #f4f3f2 !important;
+	font: bold 1em arial, helvetica, sans-serif;
+}
+
+#DisplayPerformance .nested td {
+	background: transparent url(../../images/tableCell.gif) left bottom repeat-x !important;
+}
+
+#DisplayPerformance table.nested tfoot td {
+	border-top: 25px solid #fff;
+	padding-top: 8px;
+	background-color: #E6F2F9 !important;
+}*/
+
+
+#DisplayPerformance #securitiesAccountPerformanceForm td {
+	vertical-align: middle !important;
+	padding: 0;
+}
+
+#DisplayPerformance #securitiesAccountPerformanceForm td .formAction {
+	border: none;
+	margin: 0;
+	padding: 0;
+}
+
+#DisplayPerformance .formContainer.edgeless hr {
+	margin-top: 1.5em;
+	margin-bottom: 1.5em;
+}
+
+#DisplayPerformance table.layout + .formContainer {
+	padding: 1.5em !important;
+	background: #f4f3f2;
+	border: none;
+}
+
+#DisplayPerformance table.layout + .formContainer .formAction {
+	background: transparent;
+}
+
+/* REPORT CENTER */
+
+#DisplayReportCenter table.layout td {
+	padding-bottom: 0;
+}
+
+#DisplayReportCenter table.clustered input.image {
+    padding: 0;
+}
+
+#DisplayReportCenter table.clustered td[headers="group01col05"],
+#DisplayReportCenter table.clustered td[headers="group02col05"],
+#DisplayReportCenter table.clustered td[headers="group03col05"],
+#DisplayReportCenter table.clustered td[headers="group04col05"],
+#DisplayReportCenter table.clustered td[headers="group01col01"],
+#DisplayReportCenter table.clustered td[headers="group01col02"] {
+    padding-bottom: 0;
+}
+
+#DisplayReportCenter table.clustered td:first-child {
+	padding-right: 0;
+}
+
+#DisplayReportCenter table td.ctrAlign img {
+	width: auto;
+	height: auto;
+}
+
+#DisplayReportCenter label[for=performanceTotal]{
+	margin-left: 19px;
+}
+
+#DisplayReportCenter .topAlignForm input.checkbox {
+	margin-top: 10px;
+}
+
+#DisplayReportCenter .topAlignForm label {
+	margin-top: 9px;
+}
+
+/* SERVICE: Change personal settings (GVO_78) */
+
+body#SelectPersonalSettings table.nested tr:nth-child(odd) td {
+	background-color: #f4f3f2;
+}
+
+body#SelectPersonalSettings table.nested input.checkbox {
+	float: left;
+	margin: 0.1em 6px 0.15em 2px;
+}
+
+/* ChangePersonalInformation */
+
+#ChangePersonalInformation fieldset.displayBlock legend label[for="areaCodeMobile"] {
+	display: block;
+	margin-bottom: 7px;
+}
+
+#ChangePersonalInformation fieldset.displayBlock table td a.visuallyEnhanced {
+	display: inline-block !important;
+	margin-left: 8px;
+}
+
+#ChangePersonalInformation #personalInformationForm tr.subsequent.mustValidate table.layout td.roll.rgtPadding {
+	width: 54%;
+}
+
+#ChangePersonalInformation #personalInformationForm tr.subsequent th {
+	border-top-width: 3em !important;
+}
+
+#ChangePersonalInformation #personalInformationForm tr.subsequent th:before {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 1px;
+	margin-top: -1.5em;
+	background: #c2c2c2;
+}
+
+#ChangePersonalInformation #personalInformationForm > table tr:first-child th {
+	border-top: none;
+}
+
+#ChangePersonalInformation #personalInformationForm tr.subsequent td strong,
+#ChangePersonalInformation #personalInformationForm tr.subsequentL td strong,
+#ChangePersonalInformation #personalInformationForm tr.mustValidate + tr.subsequent th {
+	color: #133C7F;
+	font-size: 1.23077em;
+}
+
+#ChangePersonalInformation #personalInformationForm tr.mustValidate + tr.subsequent th:before,
+#ChangePersonalInformation #personalInformationForm > table tr:first-child th:before {
+	display: none;
+}
+
+#ChangePersonalInformation #personalInformationForm tr.mustValidate + tr.subsequent + tr.subsequent td {
+	padding-top: .5em;
+}
+
+#ChangePersonalInformation #personalInformationForm tr td.rgtPaddingXS.lftPaddingXS {
+	vertical-align: middle;
+}
+
+#ChangePersonalInformation .emailVerified {
+	color: #7ab800;
+	padding-left: 1.5em;
+	position: relative;
+	margin-top: 0.3em;
+}
+
+#ChangePersonalInformation .emailVerified:before {
+	content: '\e800';
+    position: absolute;
+    left: 0;
+    padding-top: 2px;
+    font-family: 'pfbicons';
+}
+
+#ChangePersonalInformation .emailNotAvailable {
+	color: #e00034;
+	padding-left: 1.5em;
+	position: relative;
+	margin-top: 0.3em;
+}
+
+#ChangePersonalInformation .emailNotAvailable:before {
+	content: '\e65a';
+    position: absolute;
+    left: 2px;
+    padding-top: 2px;
+    font-family: 'pfbicons';
+    transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+}
+
+#ChangePersonalInformation .emailNotVerified {
+	color: #FFA100;
+	padding-left: 1.5em;
+	position: relative;
+	margin-top: 0.3em;
+}
+
+#ChangePersonalInformation .emailNotVerified:before {
+	content: '\e62d';
+    position: absolute;
+    left: 0;
+    font-family: 'pfbicons';
+    font-size: 1.385em;
+	margin-top: -0.1em;
+}
+
+
+/* Building saving contracts */
+
+html[lang="en"] #RegisterDeregisterBuildingSavingContracts #topicContainer {
+	margin-top: 8.3em;
+}
+
+
+/* CreateTaxExemptionOrder */
+
+#CreateTaxExemptionOrder #taxExemptionOrderEnterForm table,
+#ChangeTaxExemptionOrder #taxExemptionOrderEnterForm table {
+	margin-bottom: 0;
+}
+
+#CreateTaxExemptionOrder #taxExemptionOrderEnterForm th,
+#ChangeTaxExemptionOrder #taxExemptionOrderEnterForm th {
+	border-left: 0;
+}
+
+#CreateTaxExemptionOrder #taxExemptionOrderEnterForm th a.personalDetails,
+#ChangeTaxExemptionOrder #taxExemptionOrderEnterForm th a.personalDetails {
+	margin-right: 5px;
+	vertical-align: bottom;
+	display: inline-block;
+}
+
+#CreateTaxExemptionOrder #taxExemptionOrderEnterForm th a#step01:focus,
+#CreateTaxExemptionOrder #taxExemptionOrderEnterForm th a#step01:active,
+#CreateTaxExemptionOrder #taxExemptionOrderEnterForm th a#step01:hover,
+#ChangeTaxExemptionOrder #taxExemptionOrderEnterForm th a#step01:focus,
+#ChangeTaxExemptionOrder #taxExemptionOrderEnterForm th a#step01:active,
+#ChangeTaxExemptionOrder #taxExemptionOrderEnterForm th a#step01:hover {
+	color: #133C7F;
+}
+
+#CreateTaxExemptionOrder #taxExemptionOrderEnterForm td,
+#CreateTaxExemptionOrder #taxExemptionOrderEnterForm td a img,
+#ChangeTaxExemptionOrder #taxExemptionOrderEnterForm td,
+#ChangeTaxExemptionOrder #taxExemptionOrderEnterForm td a img {
+	vertical-align: middle;
+	background-color: #f4f3f2 !important;
+}
+
+/* ChangeOnlineLimit */
+
+#ChangeOnlineLimit #ChangeTransferLimitForm a.visuallyEnhanced {
+	display: inline;
+}
+
+#ChangeOnlineLimit #ChangeTransferLimitForm .subsequentXS td {
+	padding: 4px 0;
+}
+
+/* ChangeMobileNumber */
+
+#ChangeMobileNumber #changeMobileNumberForm td {
+	padding-top: 0;
+}
+
+#ChangeMobileNumber #changeMobileNumberForm td.lftPaddingXS {
+	padding-top: 6px;
+}
+
+#ChangeMobileNumber #changeMobileNumberForm td.roll div {
+	margin-top: 6px;
+}
+
+/* MobileTanActivate */
+
+#MobileTanActivate .formContainer tr.subsequentS th {
+	padding: 1em 0 .5em 0;
+}
+
+#MobileTanActivate .formContainer .mustValidate .rgtPadding {
+	padding-top: .5em;
+}
+
+/* ShowSMSSent */
+
+#ShowSMSSent #showSMSSentForm .formAction {
+	width: 100%;
+	overflow: hidden;
+}
+
+#ShowSMSSent table#filterSMS .col02,
+#ShowSMSSent table#filterSMS .col03,
+#ShowSMSSent table#filterSMS .col04 {
+	width: 30%;
+}
+
+#ShowSMSSent table#filterSMS select {
+	width: 100%;
+}
+
+#ShowSMSSent #contentContainer > h3 {
+	color: #133c7f;
+	font-size: 1.69231em;
+	padding-bottom: .5em;
+}
+
+/* Z1 (ORNTR-1082) */
+
+body#CreateForeignPaymentOrder table.summary {
+	table-layout: fixed;
+}
+
+body#CreateForeignPaymentOrder table.summary td.value {
+	word-wrap: break-word;
+}
+
+/* POSTBOX: CHANGE MOBILE NUMBER */
+
+body#ChangeSignalsContactInformationMobile .areaCode {
+	width: 6.4em;
+}
+
+/*html[lang="en"] body#ChangeSignalsContactInformationMobile td.rollFixL label {
+	padding-top: 15px;
+	display: inline-block;
+}
+
+html[lang="en"] body#ChangeSignalsContactInformationMobile tr.mustValidate td.rollFixL label {
+	padding-top: 0;
+}
+
+html[lang="en"] body#ChangeSignalsContactInformationMobile td.rgtPaddingXS {
+	vertical-align: bottom;
+	padding-bottom: 10px;
+}*/
+
+/* POSTBOX: List of mobile phone numbers and e-mail addresses */
+
+body#SignalsContactInformationMobileOverview table #col02,
+body#SignalsContactInformationMobileOverview table #col03,
+body#SignalsContactInformationEmailOverview table #col02,
+body#SignalsContactInformationEmailOverview table #col03 {
+	width: 48%;
+}
+
+/* POSTBOX: Activate postbox */
+
+#PostboxActivationTeaser h3 {
+    padding: 0 0 .5em 0;
+    color: #133c7f !important;
+    font-size: 1.23076em;
+    position: relative;
+    margin-top: 1em;
+}
+
+#PostboxActivationTeaser ul {
+	/*padding-bottom: 5px;*/
+}
+
+/*#PostboxActivationTeaser ul.benefits li {
+	background: transparent url(../../postbox/images/postbox_ic_intros.png) 0 -7px no-repeat !important;
+	padding: 9px 0 7px 46px !important;
+}
+
+#PostboxActivationTeaser ul.benefits li.postboxCreditCards {
+	background-position: -150px -150px !important;
+}
+
+#PostboxActivationTeaser ul.benefits li.postboxSecurities {
+	background-position: -300px -300px !important;
+}
+
+#PostboxActivationTeaser ul.benefits li.postboxMessages {
+	background-position: -450px -443px !important;
+}*/
+
+#PostboxActivationTeaser .image {
+	float: right;
+    padding: 5px 0 20px 30px;
+}
+
+#PostboxActivationTeaser .image img {
+	width: 232px;
+	height: 169px;
+}
+
+#PostboxActivationTeaser ul.benefits {
+    margin-right: 250px;
+}
+
+#PostboxActivationTeaser .footnote {
+	padding-bottom: 3px;
+}
+
+#PostboxActivationTeaser .acceptance {
+	margin-bottom: 3px;
+}
+
+#PostboxActivationTeaser .acceptance .errorMsg {
+	margin: -1px 20px 5px 7px;
+	padding-left: 22px;
+}
+
+
+
+/* SIGNALS: Move buttons [Manage mobile phone numbers] and [Manage E-Mails] to the right */
+
+body#ListSignals .formAction {
+	width: 100%;
+	overflow: hidden;
+}
+
+body#ListSignals .formAction .nextStep {
+	float: right;
+}
+
+body#ListSignals .formAction .nextStep input {
+	margin: 0 0 0 6px;
+}
+
+/* SIGNALS: Layout the overview table */
+
+body#ListSignals table.selectable td {
+	vertical-align: top !important;
+}
+
+body#ListSignals table.selectable td:first-child input {
+	margin-top: 10px !important;
+}
+
+body#ListSignals table.selectable #col02 {
+	width: 35%;
+}
+
+body#ListSignals table.selectable #col03 {
+	width: 30%;
+}
+
+/* SIGNALS: Add some margins to the tooltip's content */
+
+body#ListSignals .ttContent {
+	display: inline-block;
+	margin: 2px 0;
+}
+
+/* SIGNALS: Overview */
+
+body#DisplaySignalsOverview table.sortable td:first-child + td + td  {
+	white-space: normal !important;
+	word-break: break-all;
+	word-wrap: break-word;
+}
+
+body#DisplaySignalsOverview .ttTrigger {
+	border-bottom: 1px dotted #363F51;
+	cursor: default;
+}
+
+body#DisplaySignalsOverview .ttContainer {
+/*	display: none;
+	position: absolute;
+	margin-top: 12px;*/
+	z-index: 1000;
+	left: 0;
+	top: 2em;
+}
+
+body#DisplaySignalsOverview .hasTooltip {
+	position: relative;
+}
+
+body#DisplaySignalsOverview .hasTooltip:hover .ttContainer {
+	display: block;
+}
+
+body#DisplaySignalsOverview .ttContent {
+	display: inline-block;
+	font-style: italic;
+}
+
+/* SIGNALS: Confirmation pages */
+
+#CreateSignal div.nextStep,
+#ChangeSignal div.nextStep,
+#DeleteSignal div.nextStep,
+#CreateSignalsContactInformationMobile div.nextStep,
+#ChangeSignalsContactInformationMobile div.nextStep,
+#DeleteSignalsContactInformationMobile div.nextStep,
+#CreateSignalsContactInformationEmail div.nextStep,
+#ChangeSignalsContactInformationEmail div.nextStep,
+#DeleteSignalsContactInformationEmail div.nextStep {
+	margin-top: 30px;
+}
+
+/* SIGNALS: Create a new or change an existing signal */
+
+body#CreatePostboxSignal select#signalType,
+body#ChangePostboxSignal select#signalType {
+	margin-top: 26px;
+}
+
+body#CreatePostboxSignal label#signalNameLabel,
+body#CreatePostboxSignal label#signalMessageLabel,
+body#ChangePostboxSignal label#signalNameLabel,
+body#ChangePostboxSignal label#signalMessageLabel {
+	margin-top: 3px;
+	display: inline-block;
+}
+
+body#CreatePostboxSignal select#signalPhoneNumber,
+body#CreatePostboxSignal select#signalMail,
+body#ChangePostboxSignal select#signalPhoneNumber,
+body#ChangePostboxSignal select#signalMail {
+	margin-top: -4px;
+}
+
+/* photoTAN ADMINISTRATION */
+
+/* ActivatePhotoTan */
+
+#ActivatePhotoTan table.layout a {
+	text-decoration: underline;
+}
+
+/* PhotoTanAdministration */
+
+#PhotoTanAdministration .tabPanel a {
+	text-decoration: none;
+}
+
+#PhotoTanAdministration table.subsequent .col01,
+#PhotoTanAdministration table.subsequent .col02,
+#PhotoTanAdministration table.subsequent .col03,
+#PhotoTanAdministration table.subsequent .col04 {
+	width: 24%;
+}
+
+#PhotoTanAdministration a.editPhotoTANDevice,
+#PhotoTanAdministration a.deletePhotoTANDevice {
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	overflow: hidden;
+	margin-right: 4px;
+	vertical-align: bottom;
+	text-indent: -999em;
+	background: transparent url(../../images/bg_orderConfirmation.png) 0 0 no-repeat;
+}
+
+*+html #PhotoTanAdministration a.editPhotoTANDevice,
+*+html #PhotoTanAdministration a.deletePhotoTANDevice {
+	text-indent: 0;
+	line-height: 100px;
+}
+
+#PhotoTanAdministration a.deletePhotoTANDevice {
+	background-position: -100px -100px;
+}
+
+#PhotoTanAdministration .formAction span.nextStep {
+	float: right;
+}
+
+*+html #PhotoTanAdministration .formAction span.nextStep {
+	position: absolute;
+	right: -5px;
+}
+
+#PhotoTanAdministration .formAction span.nextStep input {
+	margin-left: 5px;
+}
+
+@media screen and (max-width: 995px) {
+	#PhotoTanAdministration .tabNavigation a {
+		overflow:hidden;
+		text-overflow:ellipsis;
+		white-space:nowrap;
+		text-align: left;
+		width: 155px;
+	}
+}
+
+@media screen and (max-width: 940px) {
+	#PhotoTanAdministration .tabNavigation a {
+		width: 130px;
+	}
+}
+
+@media screen and (max-width: 850px) {
+	#PhotoTanAdministration .tabNavigation a {
+		width: 115px;
+	}
+}
+
+/* Download app */
+
+#photoTANDownloadContainer {
+	padding-top: 1em;
+}
+
+#photoTANDownloadContainer table {
+	margin-bottom: 0;
+}
+
+#photoTANDownloadContainer th,
+#photoTANDownloadContainer td {
+	padding: 0 0 1em 0;
+}
+
+#photoTANDownloadContainer th {
+	font: normal 1.38462em arial, helvetica, sans-serif;
+	background: #fff url(../../images/photoTAN_downloadIcons.png) -15px 0 no-repeat;
+	border: none;
+	padding-left: 30px;
+	padding-top: 6px;
+	/*padding-bottom: .75em;*/
+}
+
+.isOSX #photoTANDownloadContainer th {
+	font-family: inherit;
+}
+
+#photoTANDownloadHeader th.photoTANDownloadURL {
+	background-position: -15px -146px;
+	padding-left: 33px;
+}
+
+#photoTANDownloadHeader th.photoTANDownloadQR  {
+	background-position: -15px -298px;
+	padding-left: 27px;
+}
+
+#photoTANDownloadHeader .photoTANDownloadOr {
+	background: transparent !important;
+	color: #fff;
+	border-bottom: none;
+	padding: 0;
+}
+
+#photoTANDownloadDescription td {
+	width: 33%;
+	line-height: 140%;
+}
+
+#photoTANDownloadAction td {
+	vertical-align: middle;
+	border: 1px solid #c2c2c2;
+	text-align: center;
+	padding: 1em;
+}
+
+/* Security procedures status */
+
+#photoTANStatusContainer .tabNavigation,
+#mobileTANStatusContainer .tabNavigation {
+	margin-bottom: -2px;
+}
+
+#photoTANStatusContainer .tabNavigation li,
+#mobileTANStatusContainer .tabNavigation li {
+	padding: 0;
+	width: 100%;
+	box-sizing: border-box;
+	border-bottom: none;
+}
+
+#photoTANStatusContainer .tabNavigation li a,
+#mobileTANStatusContainer .tabNavigation li a {
+	border-bottom: none;
+	margin: 0;
+	padding: 0;
+	text-align: left;
+	color: #133c7f !important;
+	font-size: 1.69231em;
+	padding: .90909em;
+	padding-bottom: 0;
+}
+
+#photoTANStatusContainer,
+#mobileTANStatusContainer {
+	width: 49.9%;
+	float: left;
+}
+
+#photoTANStatusContainer.photoTANOnly {
+	width: 100%;
+}
+
+#mobileTANStatusContainer {
+	float: right;
+}
+
+#photoTANStatusContainer > .inner {
+	padding-right: 15px;
+}
+
+#mobileTANStatusContainer > .inner {
+	padding-left: 15px;
+}
+
+.statusText {
+	position: relative;
+	min-height: 19.25em;
+}
+
+.isOSX .statusText {
+	min-height: 17.25em;
+	margin-bottom: .5em;
+}
+
+html[lang="en"] .statusText {
+	min-height: 13.5em;
+}
+
+@media screen and (max-width: 1000px) {
+	.statusText {
+		min-height: 20em;
+	}
+}
+
+@media screen and (max-width: 950px) {
+	.statusText {
+		min-height: 21em;
+	}
+
+	html[lang="en"] .statusText {
+		min-height: 16.5em;
+	}
+}
+
+.statusImage {
+	float: right;
+	padding: 4px 0 15px 12px;
+}
+
+.statusReadMore {
+	position: absolute;
+	bottom: 0;
+}
+
+.statusReadMore a {
+	text-decoration: none;
+}
+
+.statusReadMore a:before {
+	padding-top: 0;
+}
+
+.statusReadMore a.visuallyEnhanced {
+	display: inline-block; /*added to center arrow*/
+}
+
+@media screen and (max-width: 880px) {
+
+	#photoTANStatusContainer,
+	#mobileTANStatusContainer {
+		width: 100%;
+		float: none;
+	}
+
+	#photoTANStatusContainer > .inner,
+	#mobileTANStatusContainer > .inner {
+		padding: 0;
+	}
+
+	.statusText {
+		min-height: inherit !important;
+		padding-bottom: .5em;
+	}
+
+	.statusReadMore {
+		position: relative;
+	}
+
+	#changeProcedureWizard .hasmTANRequested .statusAction,
+	#changeProcedureWizard .hasmTANDisabled .statusAction,
+	#changeProcedureWizard .hasmTANLocked .statusAction {
+		min-height: auto !important;
+	}
+
+}
+
+.statusAction {
+	border-top: 1px solid #c2c2c2;
+	padding-top: 1.5em;
+}
+
+/* RegisterPhotoTan */
+
+#RegisterPhotoTan p.mainContentWidth,
+#RegisterPhotoTanDevice p.mainContentWidth,
+#RequestPhotoTanLetterAnew p.mainContentWidth {
+	margin-right: 0;
+}
+
+#RegisterPhotoTan .formContainer a,
+#RegisterPhotoTanDevice .formContainer a,
+#RequestPhotoTanLetterAnew .formContainer a {
+	text-decoration: none;
+}
+
+#RegisterPhotoTan #requestCodeDesc ul,
+#RegisterPhotoTanDevice #requestCodeDesc ul,
+#RequestPhotoTanLetterAnew #requestCodeDesc ul {
+	padding-top: 1.25em;
+}
+
+#RegisterPhotoTan #requestCodeDesc ul li,
+#RegisterPhotoTanDevice #requestCodeDesc ul li,
+#RequestPhotoTanLetterAnew #requestCodeDesc ul li {
+	position: relative;
+	margin: 0 0 1.75em 0;
+	padding: 0;
+	background: transparent;
+}
+
+#RegisterPhotoTan #requestCodeDesc ul li:before,
+#RegisterPhotoTanDevice #requestCodeDesc ul li:before,
+#RequestPhotoTanLetterAnew #requestCodeDesc ul li:before  {
+	display: none;
+}
+
+#RegisterPhotoTan #requestCodeDesc ul li .inner,
+#RegisterPhotoTanDevice #requestCodeDesc ul li .inner,
+#RequestPhotoTanLetterAnew #requestCodeDesc ul li .inner {
+	width: 100%;
+	overflow: hidden;
+}
+
+#RegisterPhotoTan #requestCodeDesc ul li .inner h3,
+#RegisterPhotoTanDevice #requestCodeDesc ul li .inner h3,
+#RequestPhotoTanLetterAnew #requestCodeDesc ul li .inner h3 {
+	color: #0098db;
+	font-size: 1.38462em;
+	color: #133c7f;
+}
+
+#RegisterPhotoTan .requestCodeDescCounter,
+#RegisterPhotoTanDevice .requestCodeDescCounter,
+#RequestPhotoTanLetterAnew .requestCodeDescCounter {
+	display: none;
+}
+
+#RegisterPhotoTan .requestCodeDescContent,
+#RegisterPhotoTanDevice .requestCodeDescContent,
+#RequestPhotoTanLetterAnew .requestCodeDescContent {
+	padding: 0;
+}
+
+#RegisterPhotoTan .requestCodeDescPic,
+#RegisterPhotoTanDevice .requestCodeDescPic,
+#RequestPhotoTanLetterAnew .requestCodeDescPic {
+	display: none; /*todo: tell GFT to remove markup for these icons*/
+}
+
+#RegisterPhotoTan .requestCodeDescTxt,
+#RegisterPhotoTanDevice .requestCodeDescTxt,
+#RequestPhotoTanLetterAnew .requestCodeDescTxt {
+	padding-left: 2em;
+}
+
+#RegisterPhotoTan .requestCodeDescTxt:before,
+#RegisterPhotoTanDevice .requestCodeDescTxt:before,
+#RequestPhotoTanLetterAnew .requestCodeDescTxt:before  {
+	font-size: 1.6em;
+   	color: #133c7f;
+	content: "";
+	font-family: "pfbicons";
+	left: 0;
+	position: absolute;
+	line-height: 1.2em;
+}
+
+/* ChangeProcedureWizard */
+/*#ChangeProcedureWizard #requestCodeDesc .requestCodeDescPic,
+#ChangeProcedureWizard #requestCodeDesc .requestCodeDescCounter {
+	display: none;
+}
+
+#ChangeProcedureWizard #requestCodeDesc h3 {
+	font-size: 1.38462em;
+    color: #133c7f;
+}
+
+#ChangeProcedureWizard #requestCodeDesc li {
+	padding-left: 2em;
+}
+
+#ChangeProcedureWizard #requestCodeDesc li:before {
+	font-size: 1.6em;
+    color: #133c7f;
+    content: "";
+    font-family: "pfbicons";
+    left: 0;
+    position: absolute;
+    line-height: 1.2em;
+}*/
+
+
+
+/* UpdatePhotoTanDeviceIdentifier */
+
+body#UpdatePhotoTanDeviceIdentifier tr.mustValidate td.rgtPadding {
+	padding-top: 11px;
+}
+
+/* DeletePhotoTanDevice */
+
+body#DeletePhotoTanDevice #erasePhotoTANDataImage {
+	float: left;
+	padding-right: 15px;
+}
+
+/* OrderPhotoTanReader */
+
+body#OrderPhotoTanReader fieldset#fieldset01 table.layout td:first-child,
+body#OrderPhotoTanReader fieldset#fieldset02 table.layout td:first-child,
+body#OrderPhotoTanReader fieldset#fieldset03 table.layout td:first-child {
+	width: 15.41667em;
+}
+
+body#OrderPhotoTanReader fieldset#fieldset02 table.layout td:first-child {
+	width: 7.08333em;
+}
+
+body#OrderPhotoTanReader fieldset#fieldset02 table.layout td:first-child + td {
+	width: 7em;
+	text-align: right;
+}
+
+body#OrderPhotoTanReader fieldset#fieldset01 table.layout select,
+body#OrderPhotoTanReader fieldset#fieldset02 table.layout select {
+	width: 100%;
+}
+
+body#OrderPhotoTanReader fieldset#fieldset03 .footnote {
+	line-height: normal;
+}
+
+@media all and (max-width: 58em) {
+	body#OrderPhotoTanReader fieldset#fieldset03 .footnote {
+		padding-right: 0;
+	}
+}
+
+/* PFM */
+
+/* PFM help */
+body#ActivatePfm #footerContainer .pageFunctions ul,
+body#PfmDeactivation #footerContainer .pageFunctions ul,
+body[id^="Pfm"] #footerContainer .pageFunctions ul {
+	background-position: 11px -68px;
+	width: auto;
+}
+
+/* Activate PFM */
+
+#pfmActivate .image {
+	float: right;
+	width: 280px;
+	padding: 0 1em 0 2em;
+    max-width: 50%;
+}
+
+#pfmActivate .image img {
+	width: 100%;
+}
+
+#pfmActivate .image a {
+	position: relative;
+	z-index: 10000;
+}
+
+#pfmActivate h3 {
+    padding: 0 0 .5em 0;
+    color: #133c7f !important;
+    font-size: 1.23076em;
+    position: relative;
+    margin-top: 1em;
+}
+
+#pfmActivate .acceptance {
+	margin: -.75em 0 1.5em 0;
+	line-height: 140%;
+}
+
+#pfmActivate ul.benefits li {
+    position: relative;
+    padding: 0 1em 1em 1.6em;
+}
+
+#pfmActivate ul.benefits li:before,
+#ActivatePfm ul.benefits li:before {
+    color: #133c7f;
+    position: absolute;
+    font-family: 'pfbicons';
+    content: '\e800';
+    left: 0;
+    padding-top: 1px;
+}
+
+#pfmActivate .acceptance strong,
+#ActivatePfm .acceptance strong {
+	font-weight: bold !important;
+}
+
+/* Activate PFM within a modal dialogue */
+
+.modalContainer #modalPfmActivate .modalHeader h2 {
+	padding-bottom: .5em !important;
+}
+
+.modalContainer #modalPfmActivate .modalIntro {
+	z-index: 10001;
+	position: relative;
+}
+
+.modalContainer #modalPfmActivate .modalIntro h2 {
+	font-size: 2.25em;
+	margin-bottom: .5em;
+}
+
+.modalContainer #modalPfmActivate .formContainer > .inner {
+	position: relative;
+	background-color: #f4f3f2;
+	padding: 1.5em;
+}
+
+.modalContainer #modalPfmActivate .formContainer,
+.modalContainer #modalPfmActivate .formContainer p {
+	margin-bottom: 0 !important;
+}
+
+.modalContainer #modalPfmActivate .formContainer p {
+	font-size: 1.23076em;
+	padding-right: 40%;
+}
+
+.modalContainer #modalPfmActivate .formContainer .visuallyEnhanced:before {
+	top: 0;
+	padding-top: 0;
+}
+
+.modalContainer #modalPfmActivate .image {
+	float: none;
+	padding: 0;
+	width: 100%;
+	max-width: none;
+	margin-top: -4.75em;
+}
+
+.modalContainer #modalPfmActivate .image a {
+	display: block;
+}
+
+.modalContainer #modalPfmActivate .formAction {
+	border: 1px solid #c2c2c2;
+	padding: 1.5em;
+	margin: 1.5em 0 3.5em 0 !important;
+	position: relative;
+}
+
+.modalContainer #modalPfmActivate .formAction:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.modalContainer #modalPfmActivate .formAction span.previousStep,
+.modalContainer #modalPfmActivate .formAction span.nextStep {
+	float: none;
+	clear: both;
+	display: block;
+	width: 100%;
+}
+
+.modalContainer #modalPfmActivate .formAction span.previousStep .checkbox {
+	vertical-align: top;
+	margin-top: 2px;
+}
+
+.modalContainer #modalPfmActivate .formAction span.previousStep label {
+	white-space: normal;
+	text-align: left;
+	display: inline-block;
+	padding: 0 0 0 .3em;
+	line-height: 140%;
+	width: 94%;
+}
+
+.modalContainer #modalPfmActivate .formAction span.previousStep strong {
+	font-weight: bold;
+}
+
+.modalContainer #modalPfmActivate .formAction span.previousStep .errorMsg {
+	white-space: normal;
+	text-align: left;
+	padding-left: 1.25em;
+}
+
+.modalContainer #modalPfmActivate .formAction span.nextStep {
+	position: absolute;
+	right: 0;
+	bottom: -4em;
+}
+
+/* OTMS treatments for PFM budgets and savings goals */
+
+*[id^="PfmBudget"] .advice.redDotSnippet,
+*[id^="PfmSavingGoals"] .advice.redDotSnippet {
+	background: transparent;
+	padding: 0;
+}
+
+*[id^="PfmBudget"] .advice.redDotSnippet h3,
+*[id^="PfmSavingGoals"] .advice.redDotSnippet h3 {
+	font-size: 1.7em;
+	font-weight: normal;
+	padding: 0;
+	background: transparent;
+}
+
+*[id^="PfmBudget"] .advice.redDotSnippet .imgAnimationCrossFade,
+*[id^="PfmSavingGoals"] .advice.redDotSnippet .imgAnimationCrossFade {
+	padding-top: 36.5%;
+}
+
+*[id^="PfmBudget"] a.button,
+*[id^="PfmSavingGoals"] a.button {
+	margin-right: .5em;
+}
+
+/* MARKETS */
+
+body[id^="Market"] #rollContainer,
+body[id^="InvestmentFinder"] #rollContainer {
+	max-width: 62.1875em;
+}
+
+/* GiniPay */
+
+.js #giniPayContainer {
+	display: block;
+}
+
+#giniPayContainer {
+	display: none;
+	margin-bottom: 1.5em;
+	border: 1px solid #c2c2c2;
+}
+
+#giniPayContainer > .inner * {
+	margin: 0;
+	padding: 0;
+}
+
+#giniPayContainer > .inner {
+	padding: 1.5em;
+}
+
+/* Set grid for widgets */
+
+#giniPayContainer > .inner #giniPayWidgets {
+	display: table;
+	width: 100%;
+}
+
+#giniPayContainer > .inner #giniPayWidgets > .inner {
+	display: table-row;
+}
+
+#giniPayContainer > .inner #giniPayWidgets > .inner .giniPayWidget {
+	display: table-cell;
+	width: 33.33333%;
+	border-left: 1px solid #c2c2c2;
+	padding: .5em 1em .875em 1em;
+}
+
+#giniPayContainer.noDnD > .inner #giniPayWidgets > .inner .giniPayWidget {
+	width: 50%;
+}
+
+#giniPayContainer > .inner #giniPayWidgets > .inner .giniPayWidget:first-child {
+	border-left: none;
+	padding-left: 0;
+}
+
+#giniPayContainer > .inner #giniPayWidgets > .inner .giniPayWidget:last-child {
+	padding-right: 0;
+}
+
+#giniPayContainer.noDnD > .inner #giniPayWidgets > .inner .giniPayWidget:first-child {
+	display: none;
+}
+
+#giniPayContainer > .inner #giniPayWidgets > .inner .giniPayWidget:last-child {
+	border-right: none;
+}
+
+#giniPayContainer > .inner #giniPayWidgets > .inner .giniPayWidget > .inner {
+	padding: 0;
+}
+
+/* Header */
+#giniPayContainer.closed #giniPayBody {
+	display: none;
+}
+#giniPayContainer > .inner #giniPayHeader {
+	position: relative;
+}
+
+#giniPayContainer > .inner #giniPayHeader h2 {
+	font-size: 1.69231em;
+	color: #133C7F;
+}
+
+#giniPayContainer > .inner #giniPayHeader .toggler {
+	float: right;
+	margin-top: -1.66em;
+	cursor: pointer;
+}
+#giniPayContainer > .inner #giniPayHeader .toggler::after {
+	font-family: 'pfbicons';
+    content: '\e649';
+    margin-left: .5em;
+}
+#giniPayContainer.closed > .inner #giniPayHeader .toggler::after {
+	content: '\e646';
+}
+
+#giniPayContainer .giniPayWidget h3 {
+	color: #133c7f;
+	margin-bottom: 10px;
+	font-weight: normal;
+	white-space: nowrap;
+}
+
+/* Brief description */
+
+#giniPayContainer > .inner #giniPayBody > .inner > p {
+	padding: 1em 0;
+}
+
+/* Disabled widgets */
+
+#giniPayContainer > .inner .giniPayWidget.isDisabled {
+	position: relative;
+}
+
+#giniPayContainer > .inner .giniPayWidget.isDisabled:before {
+	background: rgba(255,255,255,.7);
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 2;
+}
+
+/* Tooltips */
+
+#giniPayContainer > .inner .giniPayWidget > .inner h3 span {
+	position: relative;
+	display: inline-block;
+	white-space: normal;
+	width: 18px;
+	height: 18px;
+	cursor: pointer;
+	vertical-align: top;
+}
+
+#giniPayContainer > .inner .giniPayWidget > .inner h3 span:before {
+	font-family: 'pfbicons';
+	content: '\e901';
+	font-size: 18px;
+	color: #2282c1;
+}
+
+#giniPayContainer > .inner .giniPayWidget > .inner h3 span:hover:before {
+	color: #0098db;
+}
+
+#giniPayContainer > .inner .giniPayWidget > .inner h3 span:after {
+	position: absolute;
+	display: block;
+	left: 0;
+	top: 0;
+	content: '';
+	opacity: 0;
+	transition: opacity .25s .125s ease-in-out;
+	cursor: default;
+}
+
+#giniPayContainer > .inner .giniPayWidget > .inner h3 span:hover:after {
+	z-index: 1;
+	opacity: 1;
+	content: attr(data-title);
+	border-radius: 2px;
+	box-shadow: 0 1px 4px rgba(0,0,0,.35);
+	background-color: #fff;
+	padding: 1em;
+	width: 16em;
+	top: 1.75em;
+	left: -.875em;
+}
+
+/* giniPayAction */
+
+#giniPayContainer > .inner .giniPayWidget > .inner .giniPayAction > .inner {
+	position: relative;
+	height: 8em;
+}
+
+/* Status */
+
+#giniPayContainer > .inner .giniPayWidget > .inner .giniPayStatus {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+}
+
+#giniPayContainer > .inner .giniPayWidget > .inner .giniPayStatus.exec,
+#giniPayContainer > .inner .giniPayWidget > .inner .giniPayStatus.done,
+#giniPayContainer > .inner .giniPayWidget > .inner .giniPayStatus.error {
+	background: rgba(255,255,255,.95);
+	border-radius: .5em
+}
+
+#giniPayContainer > .inner .giniPayWidget > .inner .giniPayStatus > .inner {
+	color: #7a7a7a;
+	text-align: center;
+	padding: 2.5em 0 0 0;
+	line-height: 100%;
+	display: none;
+}
+
+#giniPayContainer > .inner .giniPayWidget > .inner .giniPayStatus > .inner:before {
+	position: absolute;
+	left: 0;
+	right: 0;
+	width: 100%;
+	top: .875em;
+}
+
+#giniPayContainer > .inner .giniPayWidget > .inner .giniPayStatus.exec > .inner:before {
+	content: url(../../images/ic_ajaxloader_transparent.gif);
+}
+
+#giniPayContainer > .inner .giniPayWidget > .inner .giniPayStatus.done > .inner:before,
+#giniPayContainer > .inner .giniPayWidget > .inner .giniPayStatus.error > .inner:before {
+	font-family: 'pfbicons';
+	font-size: 16px;
+}
+
+#giniPayContainer > .inner .giniPayWidget > .inner .giniPayStatus.exec > .inner {
+	display: block;
+	cursor: progress;
+}
+
+#giniPayContainer > .inner .giniPayWidget > .inner .giniPayStatus.done > .inner {
+	color: #7ab800;
+	display: block;
+}
+
+#giniPayContainer > .inner .giniPayWidget > .inner .giniPayStatus.done > .inner:before {
+	content: '\e800';
+}
+
+#giniPayContainer > .inner .giniPayWidget > .inner .giniPayStatus.error > .inner {
+	color: #e00034;
+	display: block;
+}
+
+#giniPayContainer > .inner .giniPayWidget > .inner .giniPayStatus.error > .inner:before {
+	content: '\e65a';
+	transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+}
+
+#giniPayContainer > .inner .giniPayWidget#giniPayDragAndDrop > .inner .giniPayStatus > .inner {
+	padding-top: 3.875em;
+}
+
+#giniPayContainer > .inner .giniPayWidget#giniPayDragAndDrop > .inner .giniPayStatus > .inner:before {
+	top: 2em;
+}
+
+/* Buttons */
+
+#giniPayContainer > .inner .giniPayWidget > .inner .giniPayTrigger {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+#giniPayContainer > .inner .giniPayWidget > .inner label {
+	display: block;
+	text-align: center;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	background: #2282C1;
+	color: #fff;
+	cursor: pointer;
+	padding: 0 1em;
+	line-height: 2.46153em;
+	border-radius: 3px;
+	box-shadow: 0 1px 2px rgba(0,0,0,.35);
+}
+
+#giniPayContainer > .inner .giniPayWidget > .inner label:hover {
+	background: #0098db;
+	transition: background .2s ease;
+}
+
+#giniPayContainer > .inner #giniPayWidgets .giniPayWidget > .inner > .giniPayAction {
+	background: url(../../images/ginipay_actions.png) center 23px no-repeat;
+	background-size: 100px;
+}
+
+/* DnD */
+
+#giniPayContainer > .inner .giniPayWidget#giniPayDragAndDrop > .inner .giniPayAction {
+	border: 2px dashed #0098db;
+	margin: -2px 0;
+	cursor: alias;
+}
+
+/* Upload PDF */
+
+#giniPayContainer > .inner .giniPayWidget#giniPayUpload > .inner .giniPayAction {
+	background-position: center -99px;
+}
+
+#giniPayContainer > .inner .giniPayWidget#giniPayUpload > .inner input#giniPayFile {
+	display: none;
+}
+
+/* Copy and paste */
+
+#giniPayContainer > .inner .giniPayWidget#giniPayCopyAndPasteTrigger > .inner .giniPayAction {
+	background-position: center -194px;
+}
+
+#giniPayContainer > .inner .giniPayWidget#giniPayCopyAndPaste {
+	position: relative;
+	margin-top: 1.5em;
+}
+
+#giniPayContainer > .inner .giniPayWidget#giniPayCopyAndPaste > .inner .giniPayAction > .inner {
+	height: auto;
+	position: relative;
+}
+
+#giniPayContainer > .inner .giniPayWidget#giniPayCopyAndPaste > .inner > h3 > a {
+	position: absolute;
+	right: 0;
+	width: 16px;
+	height: 16px;
+	cursor: pointer;
+	overflow: hidden;
+	color: #fff;
+}
+
+#giniPayContainer > .inner .giniPayWidget#giniPayCopyAndPaste > .inner > h3 > a:before {
+	position: absolute;
+	font-family: 'pfbicons';
+	content: '\e65a';
+	transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	font-size: 16px;
+	box-sizing: border-box;
+	color: #525252;
+}
+
+#giniPayContainer > .inner .giniPayWidget#giniPayCopyAndPaste > .inner .giniPayAction > .inner ol {
+	display: table;
+}
+
+#giniPayContainer > .inner .giniPayWidget#giniPayCopyAndPaste > .inner .giniPayAction > .inner ol li {
+	display: table-cell;
+}
+
+#giniPayContainer > .inner .giniPayWidget#giniPayCopyAndPaste > .inner .giniPayAction > .inner ol li:first-child {
+	background: url(../../images/ginipay_copy_howto.png) 0 43px no-repeat;
+}
+
+#giniPayContainer > .inner .giniPayWidget#giniPayCopyAndPaste > .inner .giniPayAction > .inner ol li:last-child {
+	width: 66.75%;
+	padding: 0 0 3em 1em;
+}
+
+#giniPayContainer > .inner .giniPayWidget#giniPayCopyAndPaste > .inner .giniPayAction > .inner ol li:last-child textarea {
+	width: 100%;
+	height: 10.4em;
+	margin: 2.2em 0 0 0;
+	padding: .625em .5em;
+	box-sizing: border-box;
+}
+
+#giniPayContainer > .inner .giniPayWidget#giniPayCopyAndPaste > .inner .giniPayAction > .inner .giniPayTrigger {
+	left: auto;
+}
+
+/* Change Procedure Wizard */
+
+#changeProcedureWizard #changeProcedureSelector {
+	padding-top: 1.5em;
+}
+
+#changeProcedureWizard .warning .statusDescription {
+	min-height: 16.33em;
+}
+
+#changeProcedureWizard .error .statusDescription {
+	min-height: 17.33em;
+}
+
+#changeProcedureWizard #photoTANStatusContainer > .inner {
+	padding-right: 1.5em;
+}
+
+#changeProcedureWizard #photoTANStatusContainer.photoTANOnly > .inner {
+	padding-right: 0;
+}
+
+#changeProcedureWizard #mobileTANStatusContainer > .inner {
+	padding-left: 1.5em;
+}
+
+#changeProcedureWizard #changeProcedureSelector .statusReadMore {
+	margin-bottom: 0 !important;
+}
+
+#changeProcedureWizard #changeProcedureSelector .statusReadMore a {
+    position: relative;
+    padding-left: 1.5em;
+    line-height: 1.2em;
+}
+
+#changeProcedureWizard #changeProcedureSelector .statusReadMore a:before {
+	position: absolute;
+	left: 0;
+	font-family: 'pfbicons';
+	content: '\e642';
+}
+
+#changeProcedureWizard div.formAction .previousStep input {
+	background-color: #888;
+}
+
+#changeProcedureWizard div.formAction .previousStep input:hover,
+#changeProcedureWizard div.formAction .previousStep input:focus {
+	background-color: #7a7a7a;
+}
+
+#changeProcedureWizard div.formAction.start input.confirm {
+	background-color: #2282c1;
+}
+
+#changeProcedureWizard div.formAction.start input.confirm:hover,
+#changeProcedureWizard div.formAction.start input.confirm:focus {
+	background-color: #0098db;
+}
+
+#changeProcedureWizard #changeProcedureSelector.group .statusDescription .statusText {
+	min-height: inherit;
+}
+
+#changeProcedureWizard #changeProcedureSelector.group.start .statusDescription .statusText {
+	min-height: 26em;
+}
+
+.isOSX #changeProcedureWizard #changeProcedureSelector.group.start .statusDescription .statusText {
+	min-height: 23em;
+}
+
+#changeProcedureWizard #photoTANStatusContainer.photoTANOnly h3 {
+	font-size: 1.154em;
+	color: #133C7F;
+	margin-top: 1em;
+}
+
+#changeProcedureWizard .statusImage {
+	width: 96px;
+}
+
+#changeProcedureWizard #photoTANStatusContainer.photoTANOnly .statusImage {
+	width: 30%;
+	margin-left: 1em;
+}
+
+#changeProcedureWizard .statusImage img {
+	width: 100%;
+}
+
+#changeProcedureWizard #photoTANStatusContainer.photoTANOnly a.visuallyEnhanced {
+	line-height: 1em;
+}
+
+/* IE10+ */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+	#changeProcedureWizard #photoTANStatusContainer.photoTANOnly a.visuallyEnhanced {
+		line-height: 1.2em;
+	}
+}
+
+#changeProcedureWizard #photoTANStatusContainer.photoTANOnly .gotoMobileTAN {
+	margin-top: 3em;
+	margin-bottom: 3em !important;
+}
+
+#changeProcedureWizard #photoTANStatusContainer.photoTANOnly .gotoMobileTAN a.visuallyEnhanced {
+	margin-left: 0.2em;
+}
+
+#changeProcedureWizard #photoTANStatusContainer.photoTANOnly .gotoMobileTAN .warningMsg {
+	margin-top: 0;
+}
+
+#changeProcedureWizard #photoTANStatusContainer.photoTANOnly ul {
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+#changeProcedureWizard #photoTANStatusContainer.photoTANOnly ul li:before {
+	color: #133c7f;
+	position: absolute;
+	font-family: 'pfbicons';
+	content: '\e800';
+	left: 0;
+	padding-top: 0;
+}
+
+#changeProcedureWizard .advice.warning ul > li {
+	padding-left: 0;
+}
+
+#changeProcedureWizard .advice.warning ul > li:before {
+	display: none;
+}
+
+#changeProcedureWizard .advice.warning a.visuallyEnhanced {
+	color: #2282c1 !important;
+}
+
+#changeProcedureWizard .advice.warning a.visuallyEnhanced:hover {
+	color: #0098db !important;
+}
+
+#changeProcedureWizard .inner .statusAction {
+	border-top: none;
+	padding-top: .5em;
+}
+
+#changeProcedureWizard .inner .statusStatus {
+	box-sizing: border-box;
+	min-height: 38px;
+}
+
+#changeProcedureWizard #photoTANStatusContainer.hasmTANRequested .statusStatus,
+#changeProcedureWizard #photoTANStatusContainer.hasmTANRequested + #mobileTANStatusContainer .statusStatus,
+#changeProcedureWizard #photoTANStatusContainer.hasmTANDisabled .statusStatus,
+#changeProcedureWizard #photoTANStatusContainer.hasmTANDisabled + #mobileTANStatusContainer .statusStatus {
+	min-height: 92px !important;
+}
+
+#changeProcedureWizard #photoTANStatusContainer.hasmTANLocked .statusStatus,
+#changeProcedureWizard #photoTANStatusContainer.hasmTANLocked + #mobileTANStatusContainer .statusStatus {
+	min-height: 110px !important;
+}
+
+#changeProcedureWizard .procedureSelection {
+	padding: 1em 0 1.5em 0;
+	border-top: 1px solid #c2c2c2;
+}
+
+#changeProcedureWizard .procedureSelection input {
+	position: absolute;
+}
+
+#changeProcedureWizard .procedureSelection label {
+	padding-left: 1.5em;
+	display: block;
+}
+
+#changeProcedureWizard #photoTANStatusContainer,
+#changeProcedureWizard #mobileTANStatusContainer {
+	position: relative;
+}
+
+#changeProcedureWizard #mobileTANStatusContainer + p,
+#changeProcedureWizard #mobileTANStatusContainer + .errorMsg + p {
+	padding-top: 1em;
+	clear: both;
+}
+
+#changeProcedureWizard #mobileTANStatusContainer + .errorMsg {
+	clear: both;
+}
+
+#changeProcedureWizard .statusReadMore {
+	position: static;
+}
+
+#changeProcedureWizard h3 {
+	margin-top: 1em;
+	font-size: 1.154em;
+	color: #133C7F;
+}
+
+#changeProcedureWizard #photoTANStatusContainer ul li {
+	padding-left: 1.5em;
+}
+
+#changeProcedureWizard #photoTANStatusContainer ul li::before {
+    color: #133c7f;
+    position: absolute;
+    font-family: 'pfbicons';
+    content: '\e800';
+    left: 0;
+    padding-top: 0;
+}
+
+@media screen and (max-width: 990px) {
+
+	#changeProcedureWizard .warning .statusDescription {
+		min-height: 22.33em;
+	}
+
+	#changeProcedureWizard #changeProcedureSelector.group.start .statusDescription .statusText {
+		min-height: 29em;
+	}
+}
+
+@media screen and (max-width:880px) {
+
+	#changeProcedureWizard #photoTANStatusContainer > .inner,
+	#changeProcedureWizard #mobileTANStatusContainer > .inner {
+		padding: 0 0 20px 0;
+	}
+
+	#changeProcedureWizard div.formAction.start input.confirm {
+		display: block;
+	}
+
+	#changeProcedureWizard .warning .statusDescription {
+		min-height: 5em;
+	}
+
+	#changeProcedureWizard .statusDescription {
+		min-height: 8em;
+	}
+
+	html #globalContainer #folderContainer #changeProcedureWizard #changeProcedureSelector .statusStatus {
+		min-height: inherit !important;
+	}
+
+}
+
+/* Payment procedures, where #pPPD (== paymentProceduresPersonalDetails ;) */
+
+body[id^=Giropay] #rollContainer {
+	width: 62.1875em;
+}
+
+#GiropayEnrollment .formContainer table.layout td,
+#GiropayChangeData .formContainer table.layout td {
+	width: 50%;
+}
+
+#GiropayEnrollment .formContainer table.layout th,
+#GiropayChangeData .formContainer table.layout th {
+	padding-bottom: .75em;
+}
+
+#GiropayEnrollment .formContainer table.layout tr:first-child th,
+#GiropayChangeData .formContainer table.layout tr:first-child th {
+	padding-top: 0;
+}
+
+#GiropayEnrollment .formContainer table.layout tr.subsequent th,
+#GiropayChangeData .formContainer table.layout tr.subsequent th {
+	border-top-width: .875em;
+}
+
+#GiropayChangeData .formContainer table.layout tr:nth-child(4) th {
+	padding-top: .5em;
+}
+
+#pPPD .option {
+	position: relative;
+	border-left: 1px solid #c2c2c2;
+	padding: 0 0 .125em 1.5em;
+	margin-bottom: 1em;
+	min-height: 12em;
+}
+
+#pPPD .option > .inner > p:first-child {
+	display: block;
+	color: #133C7F;
+}
+
+#pPPD .option > .inner #pPPD_output_fullName,
+#pPPD .option > .inner #pPPD_output_dateOfBirth {
+	display: block;
+}
+
+#pPPD .option > .inner #pPPD_output_dateOfBirth {
+	text-indent: -.5em;
+	overflow: hidden;
+}
+
+#pPPD #pPPD_input {
+	padding-top: .5em;
+}
+
+#pPPD #pPPD_input input {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+#pPPD #pPPD_input #pPPD_input_street,
+#pPPD #pPPD_input #pPPD_input_city {
+	width: 73%;
+}
+
+#pPPD #pPPD_input #pPPD_input_streetNumber,
+#pPPD #pPPD_input #pPPD_input_postalCode {
+	width: 25%;
+}
+
+#pPPD #pPPD_input #pPPD_input_streetNumber,
+#pPPD #pPPD_input #pPPD_input_city {
+	float: right;
+}
+
+#pPPD #pPPD_input .errorMsg + p,
+#pPPD #pPPD_input .errorMsg + select {
+	margin-top: .75em;
+}
+
+#pPPD #pPPD_output #pPPD_output_change {
+	display: inline-block;
+}
+
+#pPPD #pPPD_input #pPPD_input_action {
+	display: none;
+}
+
+#pPPD #pPPD_input #pPPD_input_actionChange {
+	display: inline-block;
+	padding: .5em 1.25em;
+	background: #bbc2ce url('../../images/buttons.png') center -436px no-repeat;
+  	color: #fff;
+  	border-bottom: 1px solid #c0bbb5;
+}
+
+#pPPD #pPPD_input #pPPD_input_actionChange:hover {
+	background-position: center -617px;
+}
+
+#pPPD #pPPD_input #pPPD_input_actionChange:focus {
+	opacity: .7;
+	cursor: wait;
+}
+
+#pPPD #pPPD_input #pPPD_input_actionOr,
+#pPPD #pPPD_input #pPPD_input_actionCancel {
+	color: #7a7a7a;
+}
+
+#pPPD #pPPD_input #pPPD_input_actionCancel {
+	text-decoration: underline;
+}
+
+#GiropayEnrollment .formContainer p#paymentProceduresAccount,
+#GiropayChangeData .formContainer p#paymentProceduresAccount {
+	margin: .5em 0 0 0 !important;
+}
+
+#GiropayEnrollment .formContainer #paymentProceduresWithTANContainer p,
+#GiropayChangeData .formContainer #paymentProceduresWithTANContainer p {
+	width: 100%;
+	overflow: hidden;
+	position: relative;
+	padding-top: .5em;
+}
+
+#GiropayEnrollment .formContainer #paymentProceduresWithTANContainer p input,
+#GiropayChangeData .formContainer #paymentProceduresWithTANContainer p input {
+	position: absolute;
+	margin-top: 1px;
+}
+
+#GiropayEnrollment .formContainer #paymentProceduresWithTANContainer p label,
+#GiropayChangeData .formContainer #paymentProceduresWithTANContainer p label {
+	display: block;
+	padding-left: 1.5em;
+}
+
+@supports (-moz-appearance:meterbar) and (display:flex) { /* Firefox 22+ */
+
+	#GiropayEnrollment .formContainer #paymentProceduresWithTANContainer p label,
+	#GiropayChangeData .formContainer #paymentProceduresWithTANContainer p label {
+		padding-left: 2em;
+	}
+
+}
+
+#GiropayEnrollment .formContainer #paymentProceduresWithTANContainer p a.helpLink,
+#GiropayChangeData .formContainer #paymentProceduresWithTANContainer p a.helpLink {
+	vertical-align: top;
+	margin-top: -1px;
+	display: inline-block;
+}
+
+#GiropayEnrollment .acceptance,
+#GiropayChangeData .acceptance {
+	margin: .5em 0;
+}
+
+#GiropayEnrollment .acceptance p,
+#GiropayChangeData .acceptance p {
+	position: relative;
+}
+
+#GiropayEnrollment .acceptance p:first-child,
+#GiropayChangeData .acceptance p:first-child {
+    font: normal 1.69231em arial, helvetica, sans-serif;
+    line-height: normal !important;
+    margin: 0 !important;
+    padding: .25em 0 .875em 0;
+    color: #133C7F;
+}
+
+#GiropayEnrollment .acceptance input[type="checkbox"],
+#GiropayChangeData .acceptance input[type="checkbox"] {
+	position: absolute;
+	margin-top: .1em;
+}
+
+#GiropayEnrollment .acceptance label,
+#GiropayChangeData .acceptance label {
+	padding-left: 1.5em;
+	display: block;
+}
+
+#GiropayEnrollment .acceptance span.errorMsg,
+#GiropayChangeData .acceptance span.errorMsg {
+	margin-top: .5em;
+	display: block;
+}
+
+#GiropayEnrollment .acceptance + p,
+#GiropayChangeData .acceptance + p {
+	padding-left: 1.5em;
+}
+
+@supports (-moz-appearance:meterbar) and (display:flex) { /* Firefox 22+ */
+
+	#GiropayEnrollment .acceptance label,
+	#GiropayChangeData .acceptance label {
+		padding: .125em 0 0 2em;
+	}
+
+	#GiropayEnrollment .acceptance + p,
+	#GiropayChangeData .acceptance + p {
+		padding-left: 2em;
+	}
+
+}
+
+#GiropayEnrollment #keypadInfo {
+	display: none;
+}
+
+/* GiropayResetPassword */
+
+#GiropayResetPassword .formContainer p.hasAnnotation {
+	width: 50%;
+}
+
+/* PaymentProcedures */
+
+#GiropayOverview .tabNavigation + .formContainer {
+	margin-bottom: 0;
+}
+
+#GiropayOverview .tabNavigation + .formContainer:after {
+	content: '';
+	display: table;
+	clear: both;
+}
+
+#GiropayOverview .tabNavigation + .formContainer #paymentProceduresUserInformation {
+	width: 52%;
+	float: left;
+}
+
+#GiropayOverview .tabNavigation + .formContainer #paymentProceduresUserInformation p span.value {
+	color: #000;
+}
+
+#GiropayOverview .tabNavigation + .formContainer #paymentProceduresUserInformation p:first-child span.value {
+	display: block;
+	word-break: break-all;
+	word-wrap: break-word;
+}
+
+#GiropayOverview .tabNavigation + .formContainer #paymentProceduresBusinessPartner {
+	width: 45%;
+	float: right;
+	margin-top: -30px;
+}
+
+#GiropayOverview .tabNavigation + .formContainer #paymentProceduresBusinessPartner p {
+	margin-bottom: 0;
+	padding-top: 74px;
+	background: transparent url('../../images/logo_paydirekt.png') 0 0 no-repeat;
+	text-decoration: none;
+}
+
+#GiropayOverview .tabNavigation + .formContainer #paymentProceduresBusinessPartner a.annotationTrigger {
+	line-height: 140%;
+	display: inline-block;
+}
+
+#GiropayOverview .tabNavigation + .formContainer #paymentProceduresOnlineLimit {
+	clear: both;
+	padding-top: 1.25em;
+	color: #7a7a7a;
+}
+
+#GiropayOverview .tabNavigation + .formContainer + h2 {
+	font: normal 1.33333em arial, helvetica, sans-serif;
+	line-height: normal !important;
+	color: #133C7F;
+	padding-top: 1em;
+	margin-bottom: 0;
+}
+
+#GiropayOverview .tabNavigation + .formContainer + h2 + p {
+	color: #7a7a7a;
+	margin-bottom: 1.5em;
+}
+
+/* Mortgage direct debit */
+
+body#MortgageDirectDebit.js fieldset#mortgageLoanAccount table td:last-child {
+	display: none;
+}
+
+body#MortgageDirectDebit fieldset#currentAccount table td:last-child,
+body#MortgageDirectDebit fieldset#newAccount table td:last-child {
+	width: 100%;
+}
+
+body#MortgageDirectDebit fieldset#currentAccount table td:first-child,
+body#MortgageDirectDebit fieldset#newAccount table td:first-child {
+	padding: 0 16px .75em 0;
+	width: auto;
+	white-space: nowrap;
+}
+
+body#MortgageDirectDebit fieldset#currentAccount table tr:last-child td:first-child,
+body#MortgageDirectDebit fieldset#newAccount table tr:last-child td:first-child {
+	width: 9em;
+	display: block;
+}
+
+body#MortgageDirectDebit label[for="mortgageLoanAccountSelector"],
+body#MortgageDirectDebit fieldset#currentAccount table tr:last-child td:first-child {
+	width: 10.5em;
+	display: block;
+}
+
+body#MortgageDirectDebit fieldset#newAccount .toggleSelectedOptionContent table tr:first-child td:first-child {
+	padding-top: .6em;
+}
+
+body#MortgageDirectDebit fieldset#newAccount .toggleSelectedOptionContent input[type="text"] {
+	width: 92.5% !important;
+}
+
+body#MortgageDirectDebit fieldset#newAccount .toggleSelectedOptionContent .errorMsg {
+	white-space: normal;
+	line-height: 140%;
+}
+
+body#MortgageDirectDebit fieldset#newAccount .toggleSelectedOptionContent a.helpLink {
+	vertical-align: middle;
+}
+
+body#MortgageDirectDebit fieldset#additionalMortgageSubaccounts p {
+	line-height: normal;
+	padding-bottom: .125em;
+}
+
+body#MortgageDirectDebit fieldset#additionalMortgageSubaccounts p input.checkbox {
+	position: absolute;
+}
+
+body#MortgageDirectDebit fieldset#additionalMortgageSubaccounts p label {
+	padding-left: 1.5em;
+}
+
+@supports (-moz-appearance:meterbar) { /* FF16+ */
+	body#MortgageDirectDebit fieldset#additionalMortgageSubaccounts p label {
+		padding-left: 1.75em;
+	}
+}
+
+body#MortgageDirectDebit fieldset#additionalMortgageSubaccounts .errorMsg {
+	margin-left: -.125em;
+}
+
+body#MortgageDirectDebit .formContainer .advice p {
+	padding: 0;
+}
+
+body#MortgageDirectDebit #contentContainer .formContainer .formAction {
+	margin: 8px 0 0 0;
+	border: none;
+	padding: 0;
+}
+
+body#MortgageDirectDebit #ajaxCheckboxes input[type=checkbox] {
+	margin-right: 0.4em;
+}
+
+/* MortgagePrematureRepayment service */
+
+#MortgagePrematureRepayment #repaymentCalculationForm {
+	width: 100%;
+	overflow: hidden;
+}
+
+#MortgagePrematureRepayment .repaymentCalculationFormFieldset {
+	width: 55%;
+	float: left;
+	padding-bottom: 1em;
+}
+
+#MortgagePrematureRepayment .repaymentCalculationFormFieldset:nth-of-type(2),
+#MortgagePrematureRepayment .repaymentCalculationFormFieldset:nth-of-type(4) {
+	width: 45%;
+}
+
+#MortgagePrematureRepayment .repaymentCalculationFormFieldset:nth-of-type(1) > .inner,
+#MortgagePrematureRepayment .repaymentCalculationFormFieldset:nth-of-type(3) > .inner {
+	padding-right: 1em;
+}
+
+#MortgagePrematureRepayment .repaymentCalculationFormFieldset:nth-of-type(1) > .inner span:first-child {
+	white-space: nowrap;
+	display: inline-block;
+	padding-right: 1em;
+}
+
+#MortgagePrematureRepayment .repaymentCalculationFormFieldset:nth-of-type(3) {
+	clear: left;
+}
+
+#MortgagePrematureRepayment .repaymentCalculationFormFieldset > .inner .toggleSelectedOption {
+	padding: 0 0 .75em 0;
+}
+
+#MortgagePrematureRepayment .repaymentCalculationFormFieldset:nth-of-type(2) > .inner .toggleSelectedOption:first-child {
+	padding-top: .625em;
+}
+
+#MortgagePrematureRepayment #repaymentCalculationTrigger {
+	text-align: right;
+}
+
+#MortgagePrematureRepayment #repaymentCalculationTrigger input {
+	width: 45%;
+}
+
+#MortgagePrematureRepayment #repaymentCalculationResult {
+	position: relative;
+	margin: 1.5em -1.5em -1em -1.5em;
+}
+
+#MortgagePrematureRepayment #repaymentCalculationResult > .inner {
+	position: relative;
+	margin: 1em 1.5em;
+	padding: 1.5em 1.5em 1.25em 1.5em;
+	border: 1px solid #c2c2c2;
+}
+
+#MortgagePrematureRepayment #repaymentCalculationResult > .inner p:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+#MortgagePrematureRepayment #repaymentCalculationResult > .inner p br {
+	display: none;
+}
+
+#MortgagePrematureRepayment #repaymentCalculationResult > .inner p span.value {
+	font-size: 1.38462em;
+	display: inline-block;
+	padding-top: .125em;
+	float: right;
+}
+
+#MortgagePrematureRepayment #repaymentCalculationResult > .inner a.helpLink {
+	vertical-align: bottom;
+}
+
+#MortgagePrematureRepayment #repaymentCalculationResult .warningMsg {
+	padding: .25em 0;
+}
+
+/* MortgageLoanDetails */
+
+#MortgageLoanDetails a.helpLink {
+	vertical-align: middle;
+	margin-top: -3px;
+}
+
+/* Insurances */
+
+body#ZurichRegistrationManagement .mainContentWidth:not(.backendError) {
+	padding: .5em 12.5em 0 0;
+	margin-bottom: 1.5em;
+	background: url(../../images/logo_zurich.png) right 2.25em center no-repeat;
+	background-size: 100px;
+	line-height: 140%;
+}
+
+body#ZurichRegistrationManagement .mainContentWidth:not(.backendError) p,
+body#ZurichRegistrationManagement .mainContentWidth:not(.backendError) li {
+	padding-bottom: .5em;
+}
+
+body#ZurichRegistrationManagement .mainContentWidth:not(.backendError) li {
+	padding: 0 1em .5em 1.5em;
+	position: relative;
+}
+
+body#ZurichRegistrationManagement .mainContentWidth:not(.backendError) li:before {
+	position: absolute;
+	left: 0;
+	content: '\2015\A0';
+}
+
+body#ZurichRegistrationManagement .formContainer h2 + p {
+	padding: 0 2em .5em 0;
+}
+
+body#ZurichRegistrationManagement .formContainer h2 + p ~ p {
+	line-height: normal !important;
+	padding-bottom: .25em;
+}
+
+body#ZurichRegistrationManagement .formContainer h2 + p ~ p input.checkbox {
+	position: absolute;
+}
+
+body#ZurichRegistrationManagement .formContainer h2 + p ~ p label {
+	padding-left: 1.75em;
+}
+
+body#ZurichRegistrationManagement .formContainer .advice {
+	margin: 1.5em 0 -.75em 0;
+}
+
+body#ZurichRegistrationManagement table.summary p + p {
+	padding-top: .5em;
+}
+
+body#ZurichRegistrationManagement table.summary span.insuranceContractNumber {
+	font-weight: normal;
+	color: #7a7a7a;
+}
+
+body#ZurichInsuranceDetails a.editLink {
+	position: absolute;
+	display: inline-block;
+	overflow: hidden;
+	width: 0;
+	height: 16px;
+	padding: 2px 0 0 18px;
+	margin: -5px 0 0 5px;
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) { /* IE10+ */
+	body#ZurichInsuranceDetails a.editLink {
+		margin-left: 2px;
+	}
+}
+
+body#ZurichInsuranceDetails a.editLink:before {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	content: '';
+	width: 18px;
+	height: 16px;
+	background: url(../../images/ic_edit.png);
+}
+
+body#ZurichInsuranceDetails .hasAnnotationWithActions button.annotationTriggerOn,
+body#ZurichInsuranceDetails .hasAnnotationWithActions button.annotationTriggerOff {
+	background: url(../../images/ic_edit.png);
+	width: 18px;
+	height: 16px;
+}
+
+.modalContainer#zurichForwardParticularsDialog .floatContainer + h3 {
+	color: #133C7F;
+	font-size: 1.23076em;
+	padding: .5em 0;
+}
+
+.modalContainer#zurichForwardParticularsDialog .acceptance {
+	margin: .5em 0 1.5em 0;
+}
+.modalContainer#zurichForwardParticularsDialog .acceptance td {
+	padding-bottom: 0 !important;
+}
+
+/* esafeUpgradeAccount */
+
+.modalContainer.eSafeChangeLanguageDialog > table {
+	width: 32em;
+}
+
+.modalContainer.eSafeChangeLanguageDialog > table h2 {
+	margin-bottom: 0 !important;
+}
+
+#esafeUpgradeAccount #eSafeSelector {
+	display: table;
+	width: 100%;
+	margin-top: 2em;
+}
+
+#esafeUpgradeAccount #eSafeSelector > .inner {
+	display: table-row;
+}
+
+#esafeUpgradeAccount #eSafeSelector .eSafePanel {
+	display: table-cell;
+	width: 60%;
+}
+
+#esafeUpgradeAccount #eSafeSelector #eSafePanelCurrent {
+	width: 30%;
+	min-width: 13em;
+	border-right: 1px solid #c2c2c2;
+	padding-right: 1.5em;
+}
+
+#esafeUpgradeAccount #eSafeSelector #eSafePanelCurrent .value {
+	display: block;
+	color: #7a7a7a;
+}
+
+#esafeUpgradeAccount #eSafeSelector #eSafePanelCurrent #eSafePanelCurrentChartOutput {
+	position: relative;
+	width: 175px;
+}
+
+#esafeUpgradeAccount #eSafeSelector #eSafePanelCurrent #eSafePanelCurrentChartOutput #eSafePanelCurrentChartSize {
+	text-align: center;
+	position: absolute;
+	left: 0;
+	right: 0;
+	height: 16px;
+	line-height: 16px;
+	color: #0098db;
+	top: calc(50% - 8px);
+}
+
+#esafeUpgradeAccount #eSafeSelector #eSafePanelCurrent #eSafePanelCurrentChartOutput svg {
+   -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+}
+
+#esafeUpgradeAccount #eSafeSelector #eSafePanelCurrent #eSafePanelCurrentChartCircle {
+	stroke-dasharray: 410; /* this value is the pixel circumference of the circle */
+	stroke-dashoffset: 0;
+}
+
+#esafeUpgradeAccount #eSafeSelector #eSafePanelCurrent #eSafePanelCurrentChartLegend {
+	width: 100%;
+	overflow: hidden;
+}
+
+#esafeUpgradeAccount #eSafeSelector #eSafePanelCurrent #eSafePanelCurrentChartLegend p {
+	font-size: inherit;
+	width: 50%;
+	float: left;
+	color: #0098db;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+#esafeUpgradeAccount #eSafeSelector #eSafePanelCurrent #eSafePanelCurrentChartLegend p:first-child {
+	color: #7a7a7a;
+	text-align: right;
+	padding-right: 1em;
+}
+
+#esafeUpgradeAccount #eSafeSelector #eSafePanelCurrent #eSafePanelCurrentChartLegend p span {
+	position: relative;
+	padding: 0 0 0 1.125em;
+}
+
+#esafeUpgradeAccount #eSafeSelector #eSafePanelCurrent #eSafePanelCurrentChartLegend p span:before {
+	position: absolute;
+	content: '';
+	left: 0;
+	top: calc(50% - .375em);
+	width: .75em;
+	height: .75em;
+	background-color: #0098db;
+}
+
+#esafeUpgradeAccount #eSafeSelector #eSafePanelCurrent #eSafePanelCurrentChartLegend p:first-child span:before {
+	background-color: #7a7a7a;
+}
+
+#esafeUpgradeAccount #eSafeSelector #eSafePanelCurrent + .eSafePanel {
+	padding-left: 1.5em;
+}
+
+#esafeUpgradeAccount #eSafeSelector .eSafePanel h2,
+#esafeUpgradeAccount #eSafeSelector #eSafePanelCurrent p:first-child {
+	font-size: 1.38462em; /* = 18px */
+	padding-top: .5em;
+}
+
+#esafeUpgradeAccount #eSafeSelector #eSafePanelUpgradeOutput {
+	padding: 2em 0 5.5em 0;
+}
+
+#esafeUpgradeAccount #eSafeSelector #eSafePanelUpgradeOutput > .inner > * {
+	margin: 0 !important;
+	padding: 0;
+}
+
+#esafeUpgradeAccount #eSafeSelector #eSafePanelUpgradeOutput h2 {
+	font-size: 1.69231em;
+	color: #0098db;
+}
+
+#esafeUpgradeAccount #eSafeSelector #eSafePanelUpgradeOutput p:not(:first-child) {
+	color: #7a7a7a;
+	padding-top: .5em;
+}
+
+#esafeUpgradeAccount .acceptance,
+#esafeFirstTimeUpgradeAccount .acceptance,
+#esafeUpgradeAccountPeriodicBilling .acceptance {
+	margin-top: -.75em;
+	margin-bottom: 1.5em;
+}
+
+#esafeFirstTimeUpgradeAccountSelected {
+	position: relative;
+}
+
+#esafeFirstTimeUpgradeAccountSelected a {
+	position: absolute;
+	right: 0;
+}
+
+#esafeUpgradeAccount .summary .layout td {
+	background: transparent !important;
+	vertical-align: top;
+	padding-bottom: .5em;
+}
+
+#esafeUpgradeAccount .summary .layout td:first-child,
+#esafeUpgradeAccount .summary .layout td.balance {
+	width: auto;
+}
+
+#esafeUpgradeAccount .summary .layout td.balance {
+	padding-left: .25em;
+	padding-right: 1em;
+}
+
+#esafeUpgradeAccount .summary .layout td.roll {
+	width: 100%;
+	color: #7a7a7a;
+}
+
+#esafeUpgradeAccount .summary .layout tr:last-child td {
+	border-top: 1px solid #999;
+	padding-top: .5em;
+	padding-bottom: 0;
+}
+
+/* esafeCounter */
+
+#esafeCounterContainer {
+	position: absolute;
+	right: -12px;
+	top: -13px;
+	min-width: 12px;
+	height: 12px;
+	border: 6px solid #00a3e0;
+	background-color: #00a3e0;
+	-webkit-border-radius: 24px;
+	border-radius: 24px;
+	box-sizing: content-box;
+	color: #fff;
+	font: normal .73333em arial;
+	line-height: 11px;
+}
+
+#esafeCounterContainer:before,
+#esafeCounterContainer:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	width: 12px;
+	height: 12px;
+	background-size: 12px;
+	background: transparent url(../../images/ic_envelope.svg) 0 0 no-repeat;
+}
+
+#dciCounterContainer {
+	position: relative;
+	min-width: 20px;
+}
+
+#dciCounterContainer a:after {
+	content: '';
+	position: absolute;
+	top: -10px;
+	right: 0;
+	width: 20px;
+	height: 20px;
+	background: transparent url(../../images/bg_phishingDistractor.png) 0 center no-repeat;
+}
+
+#localNavigation #dciCounterContainer a:after {
+	top: 0;
+	right: unset;
+	margin-left: 8px;
+}
+
+/* ANIMATIONS
+
+http://css3.bradshawenterprises.com/cfimg/#cfimg3
+
+For "n" (=3) images You must define:
+a=presentation time for one image (5s)
+b=duration for cross fading (3s)
+Total animation-duration is of course t=(a+b)*n, thus t=(5s+3s)*3 ==> t=8s*3 ==> t=24s
+
+animation-delay = t/n or = a+b (8s)
+
+Percentage for keyframes:
+
+0%
+a/t*100%
+(a+b)/t*100% = 1/n*100%
+100%-(b/t*100%)
+100%
+
+*/
+
+@keyframes imgAnimationCrossFade {
+	0% {
+		opacity:1;
+	}
+	20% {
+		opacity:1;
+	}
+	33% {
+		opacity:0;
+	}
+	80% {
+		opacity:0;
+	}
+	100% {
+		opacity:1;
+	}
+}
+
+.imgAnimationCrossFade {
+	position: relative;
+	height: 0;
+}
+
+.imgAnimationCrossFade img {
+	position: absolute;
+	width: 100%;
+	top: 0;
+	-webkit-animation-name: imgAnimationCrossFade;
+	-webkit-animation-timing-function: ease-in-out;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-duration: 24s;
+	-moz-animation-name: imgAnimationCrossFade;
+	-moz-animation-timing-function: ease-in-out;
+	-moz-animation-iteration-count: 1;
+	-moz-animation-duration: 24s;
+	-o-animation-name: imgAnimationCrossFade;
+	-o-animation-timing-function: ease-in-out;
+	-o-animation-iteration-count: 1;
+	-o-animation-duration: 24s;
+	animation-name: imgAnimationCrossFade;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: 1;
+	animation-duration: 24s;
+}
+
+.imgAnimationCrossFade img:nth-of-type(1) {
+	z-index: 3;
+	-webkit-animation-delay: 0;
+	-moz-animation-delay: 0;
+	-o-animation-delay: 0;
+	animation-delay: 0;
+}
+
+.imgAnimationCrossFade img:nth-of-type(2) {
+	z-index: 2;
+	-webkit-animation-delay: 8s;
+	-moz-animation-delay: 8s;
+	-o-animation-delay: 8s;
+	animation-delay: 8s;
+}
+
+.imgAnimationCrossFade img:nth-of-type(3) {
+	z-index: 1;
+	-webkit-animation-delay: 16s;
+	-moz-animation-delay: 16s;
+	-o-animation-delay: 16s;
+	animation-delay: 16s;
+}
+
+/* Provide space for iFrames */
+
+body#AnlageFinder #contentContainer,
+body#AnlageFinderLB #contentContainer,
+body#OpraStandalone #contentContainer,
+body#FinanzCheck #contentContainer,
+body[id^="Market"] #contentContainer,
+body[id^="InvestmentFinder"] #contentContainer,
+body#KacUpdateInfo #contentContainer,
+body#KacUpdateInfo #contentContainer h1,
+body#ClickForCredit #contentContainer,
+body#ClickForCredit #contentContainer h1,
+body#esafeChangeVariant #contentContainer,
+body#esafeChangeVariant #contentContainer h1,
+body#FinanzCheck h1,
+body#DisplayMkv #contentContainer,
+body#DisplayMkv #contentContainer h1,
+body#DisplayMaximumCreditVolume #contentContainer,
+body#DisplayMaximumCreditVolume #contentContainer h1 {
+    margin-left: 0 !important;
+}
+
+body#FinanzCheck #topicContainer,
+body#KacUpdateInfo #topicContainer {
+	display: none !important;
+}
+
+/* MiFID PRIIP KID */
+
+.BrokerageLegalDoc p:first-child strong {
+	color: #133c7f;
+	font-size: 1.69231em;
+	padding: .25em 0 .5em 0;
+	display: block;
+}
+
+.BrokerageLegalDoc .option.shadow {
+	border: 1px solid #c2c2c2;
+	padding: 1.5em;
+	margin: 1.5em 0;
+}
+
+.BrokerageLegalDoc .center {
+	text-align: center;
+}
+
+.BrokerageLegalDoc.formContainer label {
+	position: relative;
+	display: block;
+}
+
+.BrokerageLegalDoc .clear {
+	clear: both;
+	margin: 1em 0 0 0 !important;
+	position: relative;
+}
+
+.BrokerageLegalDoc .clear label {
+	padding-right: 14em;
+}
+
+.BrokerageLegalDoc .clear input {
+	float: right;
+	width: 150px;
+	width: 12em;
+	margin-right: -14em;
+}
+
+.BrokerageLegalDoc .clear.shadow {
+	background: #EAE8E6;
+	padding: 1em;
+}
+
+.BrokerageLegalDoc .formContainer label input.radio {
+	position: absolute;
+	left: -20px;
+}
+
+/* AnlageFinder */
+
+body#AnlageFinder #globalNavigation ul,
+body#AnlageFinderLB #globalNavigation ul {
+	min-width: 1050px;
+	max-width: 1050px;
+}
+
+/* Kauf- und Überweisungsauftrag iTunes, Wunsch Apple */
+
+#giftCardTermsAndConditions h3,
+#giftCardHowTo h3 {
+    padding: 0;
+    color: #133c7f !important;
+    font-size: 1.23076em;
+    margin: 1.5em 0 .5em;
+}
+
+#giftCardTermsAndConditions .inner > p,
+#giftCardHowTo .inner > p {
+	margin-bottom: 1em;
+}
+
+#giftCardTermsAndConditions ol li,
+#giftCardHowTo ol li {
+    list-style-position: inside;
+    margin-bottom: 0.75em;
+}
+
+/* Cookie consent box */
+
+#cookieConsentBox,
+#cookieConsentBox * {
+	box-sizing: border-box;
+}
+
+#cookieConsentBox {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	background-color: #fff;
+	font-size: .8125em;
+	z-index: 10000;
+	max-height: 100%;
+	transition: max-height 1s;
+}
+
+#cookieConsentBox.accepted {
+	max-height: 0;
+}
+
+#cookieConsentBox:before {
+	position: absolute;
+	content: '';
+	left: 0;
+	top: 1px;
+	height: 1px;
+	width: 100%;
+	background-color: #c2c2c2;
+}
+
+#cookieConsentBox > .inner {
+	position: relative;
+	padding: 1em;
+	margin: 0 auto;
+	min-width: 59.61539em;
+	max-width: 76.53846em;
+}
+
+#cookieConsentBox #cookieConsentDescription {
+	color: #7a7a7a;
+	padding: 0 4em 0 2em;
+}
+
+#cookieConsentBox #cookieConsentAction {
+	position: absolute;
+	right: 1em;
+	top: 1em;
+}
+
+#cookieConsentBox #cookieConsentAction button {
+	background: #fff;
+	color: #fff;
+	border: none;
+	width: 2em;
+	cursor: pointer;
+	outline: 0;
+}
+
+#cookieConsentBox #cookieConsentAction button span {
+	display: block;
+	position: relative;
+}
+
+#cookieConsentBox #cookieConsentAction button span:before {
+	position: absolute;
+	left: 0;
+	right: 0;
+	color: #2282C1;
+	font-family: 'pfbicons';
+	content: '\e65a';
+	font-size: 16px;
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+
+#cookieConsentBox + #rollContainer {
+	margin-bottom: 5em;
+}
+
+/* DpmOnboarding */
+
+body#DpmOnboarding #topicContainer {
+	display: none;
+}
+
+body#DpmOnboarding #contentContainer {
+	margin-left: 0;
+	position: relative;
+}
+
+body#DpmOnboarding #contentContainer:before {
+	position: absolute;
+	content: '';
+	top: 0;
+	background: transparent url(../../dpm/images/bg_landing.jpg) 0 0 no-repeat;
+	background-size: auto 100%;
+	width: 100%;
+	height: 24em;
+}
+
+@media only screen and (device-width: 1366px) and (device-height: 1024px) { /* iPad Pro */
+	body#DpmOnboarding #contentContainer:before {
+		background-position: center 0;
+	}
+}
+
+
+body#DpmOnboarding #contentContainer {
+	min-height: auto;
+	padding-top: 26em;
+}
+
+body#DpmOnboarding #contentContainer > * {
+	text-align: center;
+	margin: 0;
+	padding: 0 4em 13px 4em;
+}
+
+body#DpmOnboarding #contentContainer h2 {
+	font-size: 1.69231em;
+	color: #133c7f;
+	padding-bottom: 6px;
+}
+
+body#DpmOnboarding #contentContainer h3 {
+	font-size: 2.5em;
+	color: #133c7f;
+}
+
+body#DpmOnboarding #contentContainer p {
+	font-size: 1.23076em;
+}
+
+body#DpmOnboarding #contentContainer .formAction {
+	text-align: center;
+	padding-top: 1em;
+}
+
+body#DpmOnboarding #contentContainer .formAction a {
+	color: #fff;
+	padding: .75em 1.75em;
+	position: relative;
+	display: inline-block;
+	text-decoration: none;
+}
+
+body#DpmOnboarding #contentContainer .formAction a:nth-child(1) {
+    background: #efb700;
+    border: 1px solid #e0a200;
+    border-radius: 2px;
+    transition: background-color 0.2s;
+}
+
+body#DpmOnboarding #contentContainer .formAction a:nth-child(1):hover,
+body#DpmOnboarding #contentContainer .formAction a:nth-child(1):focus {
+    background: #e0a200;
+}
+
+body#DpmOnboarding #contentContainer .formAction a:nth-child(2) {
+	color: #2282c1;
+}
+
+/* verimi (Digital Identitiy and Payment Plattform) */
+
+body#login #verimiContainer {
+	border-top: 1px solid #c2c2c2;
+	margin-top: 1em;
+	margin-bottom: -.25em;
+	padding-top: 1.25em;
+}
+
+body#login #verimiContainer h3 {
+	color: #133c7f;
+	font-size: 1.23076em;
+	padding-bottom: .25em;
+}
+
+body#login #verimiContainer #verimiLogin {
+	float: right;
+	padding-top: .625em;
+}
+
+body#login #phishing button.nextStep,
+body#login #verimiContainer #verimiLogin .button {
+	width: 12.5em;
+}
+
+html[lang='en'] body#login #phishing button.nextStep,
+html[lang='en'] body#login #verimiContainer #verimiLogin .button {
+	width: 13em;
+}
+
+body#login #phishing button.nextStep {
+	text-align: left;
+}
+
+body#login #verimiContainer #verimiLogin .button {
+	padding-left: 3em;
+	box-shadow: none;
+	padding-right: 1em !important;
+	text-align: right;
+	background: #00c383; /* Old Browsers */
+	background: url(../../images/logo_verimi.svg), -webkit-linear-gradient(-23deg, #0d9571 0%, #0d9571 42px, #00c382 42px, #00c382 100%); /* Chrome10+,Safari5.1+ */
+	background: url(../../images/logo_verimi.svg), -ms-linear-gradient(-15deg, #0d9571 0%, #0d9571 42px, #00c382 42px, #00c382 100%); /* IE 10+ */
+	background: url(../../images/logo_verimi.svg), linear-gradient(113deg, #0d9571 0%, #0d9571 42px, #00c382 42px, #00c382 100%); /* W3C */
+	background-position: .875em center, 0 0;
+	background-size: 18px auto, auto auto;
+	background-repeat: no-repeat;
+	transition: none;
+}
+
+body#login #verimiContainer #verimiLogin .button:hover {
+	background: url(../../images/logo_verimi.svg), #0d9571;
+	background-position: .875em center, 0 0;
+	background-size: 18px auto, auto auto;
+	background-repeat: no-repeat;
+}
+
+body#login #verimiContainer #verimiRegistration {
+	color: #7a7a7a;
+	padding-top: .5em;
+}
+
+body#login #verimiContainer .annotationContainerPositioning {
+ 	position: relative;
+}
+
+body#login #verimiContainer .annotationContainer {
+	width: 30em;
+}
+
+body#VerimiManagement #verimiStatusForm #verimiStatusInfo:after {
+	content: '';
+	display: table;
+	clear: both;
+}
+
+body#VerimiManagement #verimiStatusForm #verimiStatusInfo div {
+	width: 50%;
+	float: left;
+	padding-bottom: 1em;
+	box-sizing: border-box;
+}
+
+body#VerimiManagement #verimiStatusForm #verimiStatusInfo div h3 {
+	font-size: 1.23076em;
+	color: #133c7f;
+	margin-bottom: 0;
+}
+
+body#VerimiManagement #verimiStatusForm #verimiStatusInfo div:nth-child(1) {
+	padding-right: 1em;
+}
+
+body#VerimiManagement #verimiStatusForm #verimiStatusInfo div:nth-child(2) {
+	padding-top: 3.75em;
+	padding-left: 1em;
+	background: url(../../images/logo_verimi.png) 1em 0 no-repeat;
+	background-size: 120px 27px;
+}
+
+body#VerimiManagement #verimiStatusForm #verimiStatusInfo + div p {
+	color: #7a7a7a;
+}
+
+/* Giropay activation overlay */
+
+#modalGiropayIntro #activationDialog .formContainer {
+	border: none;
+	padding: 0;
+}
+
+#modalGiropayIntro .modalIntro {
+	margin-bottom: 0;
+}
+
+#modalGiropayIntro #activationDialog {
+	margin-bottom: 0;
+}
+
+#modalGiropayIntro #activationDialog .floatContainer {
+	margin: 0 !important;
+}
+
+#modalGiropayIntro #activationDialog .floatContainer p {
+	clear: both;
+	padding-bottom:0;
+	margin: 0 !important;
+}
+
+/* future date transfers overview */
+#DisplaySepaFutureDateTransfers #col06 {
+	white-space: nowrap;
+}
+
+/* manage TAN*/
+#ManageTAN #ipAddress {
+	white-space: nowrap;
+}
+
+#ManageTAN .formContainer .formAction {
+	margin: 0;
+	border-top: none;
+}

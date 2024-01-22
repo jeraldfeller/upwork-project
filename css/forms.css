@@ -1,0 +1,1934 @@
+/* +++ FORMS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+fieldset {
+	border: none;
+	display: inline;
+	vertical-align: middle;
+}
+
+fieldset.displayBlock {
+	display: block;
+}
+
+legend {
+	font-size: 0; /* Hide legend elements in Firefox */
+}
+
+fieldset.emphasized {
+	display: block;
+	clear: left;
+}
+
+fieldset.emphasized > .inner {
+	padding: 0 0 1.5em 0;
+}
+
+/* Placeholder */
+
+::-webkit-input-placeholder { /* WebKit browsers */
+	color: #888;
+	opacity: 1;
+}
+
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+	color: #888;
+	opacity: 1;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+	color: #888;
+	opacity: 1;
+}
+
+/* formContainer */
+
+.formContainer {
+	border: 1px solid #c2c2c2;
+	margin-bottom: 30px;
+	background: #fff;
+	padding: 1.5em;
+}
+
+/*
+this is for the future for fixing the overlays in OTMS
+.modalContent .formContainer {
+	margin-bottom: 0;
+}*/
+
+.formContainer h2 {
+	font: normal 1.69231em arial, helvetica, sans-serif;
+	line-height: normal !important;
+	color: #133C7F;
+	padding: 0;
+}
+
+.formContainer p {
+	margin-bottom: 8px !important;
+}
+
+.formContainer ul,
+.modalContainer ul:not(.tabNavigation) {
+	margin-bottom: 8px;
+}
+
+.formContainer li,
+.modalContainer ul:not(.tabNavigation) li  {
+	line-height: 140%;
+	padding: .5em 1em 0 1.5em;
+	position: relative;
+}
+
+.formContainer li:first-child,
+.modalContainer ul:not(.tabNavigation) li:first-child {
+	padding-top: 0;
+}
+
+.formContainer li:before,
+.modalContainer ul:not(.tabNavigation) li:before {
+	position: absolute;
+	left: 0;
+	content: '\2015\A0';
+}
+
+.formContainer hr {
+	color: #c2c2c2;
+	background: #c2c2c2;
+	width: 100%;
+	height: 1px;
+	border: none;
+	margin-top: 8px;
+}
+
+.formContainer strong.alternative,
+.formContainer b.alternative {
+	background: #EFEFEF;
+	display: block;
+	padding: 1px 16px 2px 4px;
+}
+
+.edgeless { /* Case: no formAction inside formContainer */
+	padding-bottom: 12px;
+}
+
+#contentContainer .formAction {
+	text-align: left;
+	margin-bottom: 15px;
+}
+
+#contentContainer .transparentFormContainer .formAction,
+#contentContainer .formContainer .formAction,
+#contentContainer .option .formAction,
+#contentContainer .legalNotice .formAction,
+#contentContainer .advice .formAction,
+#contentContainer .ad .formAction,
+#contentContainer .akkContainer .formAction,
+#contentContainer .acceptance .formAction {
+	text-align: right;
+	margin: 8px 0 0 0;
+}
+
+#contentContainer .formContainer .formAction,
+#contentContainer .acceptance .formAction {
+	margin: 1.5em -1.6em -1.6em -1.6em;
+	border-top: 1px solid #c2c2c2;
+	padding-top: 15px;
+	background: #fff;
+}
+
+#contentContainer .legalNotice .formAction {
+	margin-top: 12px;
+	margin-bottom: 4px;
+}
+
+#contentContainer .option .formAction {
+	margin: 0;
+}
+
+#contentContainer .acceptance .formAction {
+	border-top: none;
+	margin: 0 -5px -5px -5px;
+}
+
+#contentContainer .advice .formAction {
+	margin: 12px 24px 4px 24px;
+	margin: 15px 0 10px 0;
+	zoom: 1;
+}
+
+.transparentFormContainer .previousStep,
+.formContainer .previousStep,
+.option .previousStep,
+.legalNotice .previousStep,
+.advice .previousStep,
+.activeNotification .previousStep,
+.ad .previousStep,
+.akkContainer .previousStep,
+.acceptance .previousStep {
+	white-space: nowrap;
+	float: left;
+}
+
+.transparentFormContainer .previousStep input,
+.formContainer .previousStep input,
+.option .previousStep input,
+.legalNotice .previousStep input,
+.advice .previousStep input,
+.activeNotification .previousStep input,
+.ad .previousStep input,
+.akkContainer .previousStep input,
+.acceptance .previousStep input {
+	margin-right: .5em;
+}
+
+.transparentFormContainer .nextStep,
+.formContainer .nextStep,
+.option .nextStep,
+.legalNotice .nextStep,
+.advice .nextStep,
+.activeNotification .nextStep,
+.ad .nextStep,
+.akkContainer .nextStep,
+.acceptance .nextStep {
+	white-space: nowrap;
+}
+
+.transparentFormContainer .nextStep input,
+.formContainer .nextStep input,
+.option .nextStep input,
+.legalNotice .nextStep input,
+.advice .nextStep input,
+.activeNotification .nextStep input,
+.ad .nextStep input,
+.akkContainer .nextStep input,
+.acceptance .nextStep input {
+	margin: 0 0 0 .5em !important;
+}
+
+/* Simple approval */
+
+.approve {
+	margin: 0 !important;
+	border-top: 0 !important;
+	padding-top: 0 !important;
+	padding-bottom: 2px !important;
+}
+
+/* Activation dialogs */
+
+#activationDialog {
+	border: 1px solid #c2c2c2;
+	padding: 1.5em;
+	margin-bottom: 1.25em;
+}
+
+.formContainer #activationDialog {
+	border: none;
+	padding: 0;
+}
+
+#activationDialog .formContainer {
+	margin-bottom: 0;
+}
+
+#activationDialog h2 {
+	margin-bottom: 0;
+	padding-bottom: .75em;
+	font-size: 1.69231em;
+	color: #133c7f;
+}
+
+#activationDialog div:not(.advice) > h3 {
+	font-size: 1.23076em;
+	color: #133c7f;
+	margin: 0;
+	padding: .5em 0 .75em 0;
+}
+
+#activationDialog ul:not(.tabNavigation) + p,
+#activationDialog ul.benefits + p {
+	padding-top: .5em;
+}
+
+#activationDialog ul:not(.tabNavigation) li {
+	line-height: 140%;
+	padding: .5em 1em 0 1.5em;
+	position: relative;
+}
+
+#activationDialog ul:not(.tabNavigation) li:first-child {
+	padding-top: 0;
+}
+
+#activationDialog ul:not(.tabNavigation) li:before {
+	position: absolute;
+	left: 0;
+	content: '\2015\A0';
+}
+
+#activationDialog ul.benefits li {
+	padding: 0 1em 1em 1.6em;
+}
+
+#activationDialog ul.benefits li:before {
+	color: #133c7f;
+	position: absolute;
+	font-family: 'pfbicons';
+	content: '\e800';
+	left: 0;
+	padding-top: 1px;
+}
+
+#activationDialogTermsAndConditions {
+	border: 1px solid #c2c2c2;
+	margin: 1.5em 0;
+}
+
+#activationDialogTermsAndConditions > .inner {
+	padding: 1.5em 1.5em 1em 1.5em;
+}
+
+#activationDialogTermsAndConditions p {
+	padding-bottom: .5em;
+}
+
+#activationDialogTermsAndConditions input[type="checkbox"] {
+	position: absolute;
+	margin-top: .125em;
+}
+
+#activationDialogTermsAndConditions label {
+	padding-left: 1.5em;
+	display: block;
+}
+
+#activationDialogTermsAndConditions span.errorMsg {
+	display: block;
+}
+
+@supports (-moz-appearance:meterbar) and (display:flex) { /* FF ≥ 22 */
+
+	#activationDialogTermsAndConditions label {
+		padding: .125em 0 0 2em;
+	}
+
+	#activationDialogTermsAndConditions span.errorMsg {
+		margin-left: 2em;
+	}
+
+	#activationDialogTermsAndConditions span.errorMsg label {
+		padding: 0;
+	}
+
+}
+
+#activationDialogAction:after {
+	content: '';
+	display: table;
+	clear: both;
+}
+
+#activationDialogAction span.nextStep {
+	float: right;
+}
+
+#modalActivationDialog #activationDialog {
+	margin-bottom: 0;
+	padding: 0;
+	border: none;
+}
+
+#modalActivationDialog #activationDialog .formContainer {
+	position: relative;
+}
+
+#modalActivationDialog .tabNavigation {
+	position: relative;
+	z-index: 1;
+}
+
+#modalActivationDialog #activationDialog h2 {
+	padding: 0 0 .5em 0 !important;
+}
+
+/* Input elements */
+
+textarea, input, select {
+	font: 1em sans-serif, arial, helvetica;
+	color: #000; /*@open*/
+	padding: .625em .5em;
+	border: none;
+	background-color: #eceae7;
+	box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2);
+	outline: 0;
+	border-radius: 0;
+}
+
+.isOSX select {
+	height: 2.46154em;
+}
+
+input[type="checkbox"], input[type="radio"] {
+	background-color: transparent;
+	padding: 0;
+}
+
+input:not([type="checkbox"]):not([type="radio"]) {
+	-webkit-appearance: none;
+}
+
+input::-ms-clear,
+input::-ms-reveal {
+	display: none;
+}
+
+option {
+	padding-right: 8px;
+}
+
+optgroup {
+	text-transform: none;
+	font-weight: normal;
+	font-style: normal;
+	background: #eceae7;
+}
+
+optgroup option {
+	background: #fff;
+}
+
+textarea {
+	resize: none; /* CSS3: Safari / Chrome */
+	overflow: auto;
+}
+
+input.disabledTxt,
+input[disabled],
+input[readonly],
+select[disabled] {
+	color: #9ba5b5;
+	background: #f9f9f8;
+}
+
+/* Buttons */
+
+input.button,
+a.button,
+span.button,
+.trxm_db_onlinekredit #div-recalculateProposal,
+.trxm_db_onlinekredit .onlinecreditCompletionSection1 .button a,
+.trxm_db_onlinekredit .onlinecreditCompletionSection1 .button.disabled span,
+.OPRA_portal_teaserAction a,
+.addressLightbox #button_cancel,
+.addressLightbox #button_select,
+html .sf-base .sf-button,
+html .sf-base .sf-analysis-content .sf-accordion-toggle-link,
+html .sf-base .sf-button-controls .sf-button,
+#DTstart #advertisingSpace .advice .advertisingSpaceAction li a,
+#DTdismiss #advertisingSpace .advice .advertisingSpaceAction li a,
+#DTstart #advertisingSpace .advice .advertisingSpaceAction li a,
+#DTdismiss #advertisingSpace .advice .advertisingSpaceAction li a,
+#OPRA_portal #sideContent .OPRA_feedback li a {
+	background: #2282C1;
+	color: #fff;
+	cursor: pointer;
+	/*padding: 0 1em;
+	line-height: 2.46153em;*/ /* endable linebreaks */
+	padding: 0.6em 1em;
+	text-decoration: none;
+	border-radius: 3px;
+	box-shadow: 0 1px 2px rgba(0,0,0,.35);
+    line-height: 1.25;
+}
+
+
+a.button,
+span.button,
+.trxm_db_onlinekredit #div-recalculateProposal,
+.trxm_db_onlinekredit .onlinecreditCompletionSection1 .button a,
+.trxm_db_onlinekredit .onlinecreditCompletionSection1 .button.disabled span,
+.OPRA_portal_teaserAction a,
+html .sf-base .sf-button,
+html .sf-base .sf-analysis-content .sf-accordion-toggle-link,
+#DTstart #advertisingSpace .advice .advertisingSpaceAction li a,
+#DTdismiss #advertisingSpace .advice .advertisingSpaceAction li a,
+#DTstart #advertisingSpace .advice .advertisingSpaceAction li a,
+#DTdismiss #advertisingSpace .advice .advertisingSpaceAction li a {
+	display: inline-block;
+	cursor: pointer;
+}
+
+input.button,
+input.button:focus,
+a.button,
+a.button:focus,
+span.button,
+span.button:focus,
+.trxm_db_onlinekredit #div-recalculateProposal:focus,
+.trxm_db_onlinekredit .onlinecreditCompletionSection1 .button a:focus,
+.trxm_db_onlinekredit .onlinecreditCompletionSection1 .button.disabled span:focus,
+.OPRA_portal_teaserAction a,
+html .sf-base .sf-button,
+html .sf-base .sf-button:focus,
+html .sf-base .sf-analysis-content .sf-accordion-toggle-link,
+html .sf-base .sf-analysis-content .sf-accordion-toggle-link:focus,
+#OPRA_portal #sideContent .OPRA_feedback li a,
+#OPRA_portal #sideContent .OPRA_feedback li a:focus {
+	border: none;
+	transition: background .2s ease;
+}
+
+input.buttonHover,
+a.button:hover,
+span.button:hover,
+.trxm_db_onlinekredit #div-recalculateProposal:hover,
+.trxm_db_onlinekredit .onlinecreditCompletionSection1 .button a:hover,
+.OPRA_portal_teaserAction a:hover,
+.addressLightbox #button_cancel:hover,
+.addressLightbox #button_select:hover,
+html .sf-base .sf-button:hover,
+html .sf-base .sf-button:active,
+html .sf-base .sf-analysis-content .sf-accordion-toggle-link:hover,
+html .sf-base .sf-analysis-content .sf-accordion-toggle-link:active,
+html .sf-base .sf-analysis-content .sf-accordion-toggle-link:active:hover,
+html .sf-base .sf-analysis-content .sf-accordion-toggle-link:focus,
+#DTstart #advertisingSpace .advice .advertisingSpaceAction li a:hover,
+#DTdismiss #advertisingSpace .advice .advertisingSpaceAction li a:hover,
+#OPRA_portal #sideContent .OPRA_feedback li a:hover {
+	background-color: #0098db;
+	color: #fff;
+	border: none;
+	box-shadow: 0 1px 2px rgba(0,0,0,.35);
+}
+
+.nextStep,
+.nextStepDisabled,
+input.confirm,
+input.pushContract,
+input.activate,
+a.nextStep,
+a.pushContract,
+.OPRA_portal_teaserAction a,
+#DTstart #advertisingSpace .advice .advertisingSpaceAction li a,
+#DTdismiss #advertisingSpace .advice .advertisingSpaceAction li a {
+	padding-right: 2.625em !important;
+	background-image: url(../../images/bt_primary_default.png);
+	background-position: 91.5% center; /* for Android < 4.4 */
+	background-position: right 1.125em center;
+	background-repeat: no-repeat;
+	background-size: 13px 11px;
+}
+
+input.previousStep,
+a.previousStep {
+	padding-left: 2.625em !important;
+	background-image: url(../../images/bt_secondary_default.png);
+	background-position: 1.125em center;
+	background-repeat: no-repeat;
+	background-size: 13px 11px;
+	background-color: #888;
+}
+
+a.previousStep {
+	padding-left: 33px !important;
+	float: none !important;
+}
+
+html .sf-base .sf-button.sf-button-cancel,
+html .sf-base .sf-button.sf-button-delete:not(.sf-button-standing-order-form-delete),
+html .sf-base.sf-dbg .sf-widget.sf-budget-widget .sf-budgeting-generate-triggerer {
+	background-color: #888;
+	line-height: 1.25em;
+}
+
+input.previousStepHover,
+a.previousStep:hover,
+html .sf-base .sf-button.sf-button-cancel:hover,
+html .sf-base .sf-button.sf-button-cancel:active,
+html .sf-base .sf-button.sf-button-cancel:focus,
+html .sf-base .sf-button.sf-button-delete:not(.sf-button-standing-order-form-delete):hover,
+html .sf-base .sf-button.sf-button-delete:not(.sf-button-standing-order-form-delete):active,
+html .sf-base .sf-button.sf-button-delete:not(.sf-button-standing-order-form-delete):focus,
+html .sf-base.sf-dbg .sf-widget.sf-budget-widget .sf-budgeting-generate-triggerer:hover,
+html .sf-base.sf-dbg .sf-widget.sf-budget-widget .sf-budgeting-generate-triggerer:active,
+html .sf-base.sf-dbg .sf-widget.sf-budget-widget .sf-budgeting-generate-triggerer:focus {
+	background-color: #7a7a7a;
+}
+
+input.confirm {
+	background-color: #e00034;
+}
+
+input.requestOffer,
+a.requestOffer:link,
+a.requestOffer:visited,
+a.activate:link,
+a.activate:visited {
+
+}
+
+input.requestOffer:focus,
+input.requestOffer:hover,
+input.requestOffer:active,
+a.requestOffer:focus,
+a.requestOffer:hover,
+a.requestOffer:active,
+a.activate:focus,
+a.activate:hover,
+a.activate:active {
+
+}
+
+a.button.accountPromotion {
+	padding-left: 2.625em;
+	position: relative;
+}
+
+a.button.accountPromotion:before {
+	position: absolute;
+	left: .75em;
+	content: '';
+	width: 16px;
+	height: 16px;
+	background: transparent url(../../images/ic_trophy.png) -32px -32px no-repeat;
+	background-size: 48px 48px;
+}
+
+input.disabled,
+.trxm_db_onlinekredit .onlinecreditCompletionSection1 .button.disabled span,
+input[disabled='disabled'],
+input[disabled] {
+	opacity: .6;
+	cursor: not-allowed;
+}
+
+input.buttonHover.disabled {
+	background-color: #2282C1;
+}
+
+.nextStepDisabled.isSyncing {
+	background-image: url(../../images/ic_syncSmall_disabled.gif);
+	background-size: 13px 13px;
+}
+
+input.confirm.isSyncing {
+	background-image: url(../../images/ic_syncSmall_confirmDisabled.gif);
+	background-size: 13px 13px;
+}
+
+input.image {
+	padding: 0;
+	border: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+input[type="checkbox"], input[type="radio"],
+input.checkbox, input.radio,
+input.disabledCheckbox, input.disabledRadio {
+	width: 13px;
+	height: 13px;
+	border: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+/* Internet Explorer ≥ 10 */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+	input.checkbox, input.radio,
+	input.disabledCheckbox, input.disabledRadio {
+		padding: 0;
+	}
+}
+
+/* Opera */
+html:first-child>b\ody input.checkbox,
+html:first-child>b\ody input.radio,
+html:first-child>b\ody input.disabledCheckbox,
+html:first-child>b\ody input.disabledRadio {
+	width: 15px;
+ 	height: 15px;
+}
+
+.layout input.checkbox, .layout input.radio,
+.layout input.disabledCheckbox, .layout input.disabledRadio {
+	margin-right: 6px;
+	margin-top: -2px;
+}
+
+.layout input, .layout select {
+	vertical-align: middle;
+}
+
+label.disabled {
+	color: #7a7a7a;
+}
+
+/* Custom form elements */
+
+*[class^='cfe_'],
+*[class^='cfe_'] label {
+	position: relative;
+	display: inline-block;
+}
+
+.cfe_checkbox label {
+	padding-left: 22px;
+	cursor: pointer;
+}
+
+.cfe_checkbox input[type="checkbox"] {
+	position: absolute;
+	opacity: 0;
+	z-index: -1;
+}
+
+.cfe_checkbox label:before {
+	position: absolute;
+	left: 0;
+	top: 0;
+    content: '';
+    width: 16px;
+    height: 16px;
+    background: #eceae7;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,.2);
+    border-radius: 2px;
+    margin: -1px 0 0 0;
+}
+
+.cfe_checkbox input[type="checkbox"]:checked ~ label:after {
+	position: absolute;
+	left: 3px;
+	top: 2px;
+	font-size: 11px;
+	font-family: 'pfbicons';
+	content: '\e645';
+	color: #2282c1;
+}
+
+@supports (-moz-appearance:meterbar) and (display:flex) { /* FF22+ */
+	.cfe_checkbox input[type="checkbox"]:checked ~ label:after {
+		top: 1px;
+	}
+}
+
+@media screen and (max-device-width : 1280px) {
+
+	.cfe_checkbox label {
+		padding-left: 2.325em;
+	}
+
+	.cfe_checkbox label:before {
+		width: 24px;
+		height: 24px;
+		margin-top: -5px;
+	}
+
+	.cfe_checkbox input[type="checkbox"]:checked ~ label:after {
+		font-size: 16px;
+		left: 4px;
+		top: -1px;
+	}
+
+}
+
+/* Button groups */
+
+.buttonGroup {
+	display: table;
+	margin-bottom: 1em;
+	width: 100%;
+}
+
+.buttonGroup > .inner {
+	display: table-row;
+	display: -ms-flexbox; /* IE10 fallback */
+	display: flex;
+}
+.buttonGroup.vertical > .inner {
+	flex-direction: column;
+}
+
+.buttonGroup .button {
+	display: inline-block;
+	width: 50%;
+	flex-grow: 1;
+	position: relative;
+}
+
+.buttonGroup .button input[type=radio] {
+	display: none;
+}
+
+.buttonGroup.has3Childen .button {
+	width: 33.333%;
+}
+
+.buttonGroup.has4Childen .button {
+	width: 25%;
+}
+
+.buttonGroup.vertical .button {
+	display: table-row;
+}
+
+.buttonGroup .button label {
+	text-align: center;
+	display: block;
+	white-space: nowrap !important;
+	padding: 8px 6px;
+	margin-left: 1px;
+	cursor: pointer;
+	color: #fff;
+	background: #888;
+	box-shadow: 0 1px 2px rgba(0,0,0,.35);
+}
+
+.buttonGroup .button.disabled label {
+	color: #dbdfe6;
+	cursor: default;
+}
+
+.buttonGroup.vertical .button label {
+	padding: 0 10px;
+	text-align: left;
+}
+
+.buttonGroup .button input[type=radio] + label:hover {
+	background: #999;
+}
+.buttonGroup .button input[type=radio]:checked + label {
+	background: #0098db;
+}
+
+.buttonGroup:not(.vertical) .button:first-child label {
+	margin-left: 0;
+	-webkit-border-top-left-radius: 3px;
+	-webkit-border-bottom-left-radius: 3px;
+	-moz-border-radius-topleft: 3px;
+	-moz-border-radius-bottomleft: 3px;
+	border-top-left-radius: 3px;
+	border-bottom-left-radius: 3px;
+}
+
+.buttonGroup:not(.vertical) .button:last-child label {
+	-webkit-border-top-right-radius: 3px;
+	-webkit-border-bottom-right-radius: 3px;
+	-moz-border-radius-topright: 3px;
+	-moz-border-radius-bottomright: 3px;
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px;
+}
+
+.buttonGroup.vertical .button:first-child label {
+	margin-left: 0;
+	-webkit-border-top-left-radius: 3px;
+	-webkit-border-top-right-radius: 3px;
+	-moz-border-radius-topleft: 3px;
+	-moz-border-radius-topright: 3px;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+}
+
+.buttonGroup.vertical .button:last-child label {
+	margin-left: 0;
+	-webkit-border-bottom-left-radius: 3px;
+	-webkit-border-bottom-right-radius: 3px;
+	-moz-border-radius-bottomleft: 3px;
+	-moz-border-radius-bottomright: 3px;
+	border-bottom-left-radius: 3px;
+	border-bottom-right-radius: 3px;
+}
+
+.buttonGroup .button.bestOffer label:after {
+	position: absolute;
+	top: 0;
+	left: 7px;
+	color: #fff;
+	content: "%";
+}
+
+.buttonGroup .button.bestOffer label:before {
+	position: absolute;
+	left: 5px;
+	top: -1px;
+	width: 1px;
+	content: "";
+	height: 16px;
+	background: orange;
+	text-align: center;
+	-webkit-border-top-left-radius: 5px;
+	-webkit-border-top-right-radius: 5px;
+	-moz-border-radius-topleft: 5px;
+	-moz-border-radius-topright: 2px;
+	border-top-left-radius: 1px;
+	border-top-right-radius: 1px;
+	border-left: 8px solid transparent;
+	border-right: 7px solid transparent;
+	border-bottom: 4px solid #888;
+}
+
+.buttonGroup .button.bestOffer input[type=radio] + label:hover:before {
+	border-bottom-color: #7a7a7a;
+}
+.buttonGroup .button.bestOffer input[type=radio]:checked + label:before {
+	border-bottom: 4px solid #0098db;
+}
+
+
+/* +++ OPENISSUE: NAME ++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+input.bankIdentifierCode,
+input.bankIdentifierCodeOverseas {
+	width: 140px; /* OPENISSUE */
+}
+
+input.tanBlock {
+	width: 40px; /* OPENISSUE */
+}
+
+input.postCode {
+	width: 55px; /*OPENISSUE*/
+	margin-right: 4px;
+}
+
+input#subAccount,
+input.subAccount,
+input.subDeposit {
+	width: 1.6em;
+}
+
+input.areaCode {
+	width: 5em;
+}
+
+select.year {
+	width: 90px; /* OPENISSUE: Used in standing orders */
+}
+
+select.month {
+	width: 100px; /* OPENISSUE: Used in standing orders */
+}
+
+input.buildingLoanContractNumber {
+	width: 5.5em;
+}
+
+input.buildingLoanContractSubAccountNumber {
+	width: 2em;
+}
+
+
+/* +++ Authentication methods ++++++++++++++++++++++++++++++++++++++++++++++ */
+
+#iTANForm .formAction,
+#jointLegiForm .formAction,
+#requestMobileTANForm .formAction,
+#mobileTANForm .formAction,
+#photoTANForm .formAction {
+	margin: 0 !important;
+	padding-top: 15px !important;
+	border-top: none !important;
+	background: transparent !important;
+}
+
+.js #photoTANForm,
+.js #mobileTANForm,
+.js #iTANForm {
+	position: relative;
+}
+
+.js #photoTANForm .additionalInfo,
+.js #mobileTANForm .additionalInfo,
+.js #iTANForm .additionalInfo {
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 0;
+	zoom: 1;
+}
+
+/* ALM #55915
+#DTiTAN #iTANForm .additionalInfo,
+#DTmobileTAN #mobileTANForm .additionalInfo,
+#DTiTAN #photoTANForm .additionalInfo,
+#DirectTrade #photoTANForm .additionalInfo {
+	display: none;
+}
+*/
+
+/* iTAN and mobileTAN */
+
+#requestMobileTANForm #requestMobileTANSingleContainer,
+#mobileTANForm #mobileTANContainer,
+#iTANForm #iTANContainer {
+	position: relative;
+}
+
+#requestMobileTANForm #requestMobileTANSingleDescription,
+#mobileTANForm #mobileTANDescription,
+#iTANForm #iTANDescription {
+	float: left;
+	padding-right: 150px;
+}
+
+.fs-normal #mobileTANForm #mobileTANDescription,
+.fs-large #mobileTANForm #mobileTANDescription {
+	padding-bottom: 1em;
+}
+
+#iTANForm #iTANDescription {
+	padding-bottom: 2.66667em;
+}
+
+#requestMobileTANForm #requestMobileTANSingleDescription {
+	padding-right: 15em;
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) { /* IE10+ */
+	html[lang="en"] #requestMobileTANForm #requestMobileTANSingleDescription,
+	html[lang="en"] #mobileTANForm #mobileTANDescription {
+		padding-right: 16em;
+	}
+}
+
+#requestMobileTANForm #requestMobileTANSingleNumber,
+#mobileTANForm #mobileTANInput,
+#iTANForm #iTANInput {
+	position: absolute;
+	right: 0;
+	top: 0;
+	white-space: nowrap;
+}
+
+#requestMobileTANForm #requestMobileTANSingleNumber {
+	padding: .75em 0 .25em 0;
+	text-align: center;
+	width: 13.9em;
+	width: 13.25em;
+	background: #f4f3f2;
+}
+
+#iTANForm .errorMsg,
+#mobileTANForm .errorMsg {
+	position: relative;
+	padding: 0;
+	text-align: right;
+	background: transparent;
+}
+
+#iTANForm .errorMsg label,
+#mobileTANForm .errorMsg label {
+	background: transparent url(../../images/ic_error.png) 0 0 no-repeat !important;
+	padding: 1px 0 0 20px;
+	display: inline-block;
+	text-align: left;
+}
+
+/* photoTAN */
+
+#photoTANGraphic {
+	float: left;
+	margin: -8px 0 0 -12px;
+}
+
+#photoTANDescription,
+#photoTANInput,
+#photoTANError {
+	margin-left: 210px;
+}
+
+#photoTANInput {
+	position: relative;
+	padding-bottom: .25em;
+}
+
+/* TAN input elements */
+
+#photoTANInput > .inner,
+#mobileTANInput > .inner,
+#iTANInput > .inner {
+	display: inline-block;
+}
+
+.js #photoTANInput > .inner,
+.js #mobileTANInput > .inner,
+.js #iTANInput > .inner {
+	position: relative;
+	padding-right: 36px;
+	width: 80px;
+}
+
+#photoTANInput label,
+#mobileTANInput label,
+#iTANInput label {
+	position: relative;
+	z-index: 4;
+	display: block;
+	line-height: 140%;
+}
+
+#photoTANInput input,
+#mobileTANInput input,
+#iTANInput input {
+	position: relative;
+	z-index: 4;
+}
+
+#photoTANInput input#photoTAN,
+#mobileTANInput input#mobileTAN,
+#iTANInput input#iTAN {
+	box-sizing: border-box;
+	width: 87px;
+	height: 32px;
+}
+
+/* Joint legi */
+
+#jointLegiForm #jointLegi {
+	width: 4em;
+	margin-left: .5em;
+}
+
+#jointLegiForm label {
+	display: block;
+}
+
+/* (iTAN)-form inside formContainer */
+
+form.nested,
+div.nested {
+	margin-top: 30px;
+}
+
+form.nested .additionalInfo,
+div.nested .additionalInfo {
+	padding-top: 25px;
+}
+
+/* +++ KEYPAD +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+.js #keypadTrigger {
+	position: absolute;
+	right: -2px;
+	bottom: 0;
+	display: inline-block;
+	width: 32px;
+	height: 32px;
+	cursor: pointer;
+	background: transparent url(../../images/ic_keypad.png) right center no-repeat;
+	background-size: 17px 11px;
+}
+
+.js #keypadBackdrop,
+.js #keypadContainer {
+	display: none;
+	position: absolute;
+	z-index: 2;
+	height: 220px;
+	width: 136px;
+	bottom: 0;
+	left: 0;
+}
+
+.js #keypadBackdrop {
+	bottom: -34px;
+	left: -34px;
+	height: 227px;
+	width: 144px;
+	padding: 40px 40px 0 0;
+}
+
+.js #keypadContainer {
+	z-index: 3;
+	border: 4px solid #fff;
+	border-top-width: 3px;
+	border-radius: 4px;
+	left: -14px;
+	bottom: -13px;
+}
+
+.js #keypadContainer > .inner {
+	height: 100%;
+	background: #fff;
+	box-shadow: 0 2px 3px rgba(0,0,0,.3);
+	position: relative;
+	border-top: 1px solid #f4f3f2;
+	border-radius: 1px;
+}
+
+.js #keypadHeader {
+	position: absolute;
+	right: 10px;
+	bottom: 10px;
+	z-index: 5;
+}
+
+.js #keypadHeader #keypadTitle {
+	display: none;
+}
+
+.js #keypadHeader #keypadClose {
+	position: relative;
+	width: 30px;
+	height: 32px;
+	cursor: pointer;
+	background-color: #fff;
+}
+
+.js #keypadHeader #keypadClose:before {
+	position: absolute;
+	font-family: 'pfbicons';
+	content: '\e65a';
+	transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	font-size: 16px;
+	right: 2px;
+	top: 8px;
+	box-sizing: border-box;
+}
+
+
+.js #keypadBody {
+	padding: 10px 0 10px 10px;
+}
+
+.js #keypadBody > .inner {
+	width: 100%;
+	overflow: hidden;
+}
+
+.js #keypadBody input {
+	width: 36px;
+	height: 32px;
+	font-size: 13px;
+	float: left;
+	margin: 0 4px 4px 0;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.js #keypadBody input:hover {
+	background-color: #0098db;
+}
+
+.js #keypadBody input#keypad99 {
+	width: 76px;
+}
+
+.js #keypadBody input#keypad04,
+.js #keypadBody input#keypad07,
+.js #keypadBody input#keypad00 {
+	clear: left !important;
+}
+
+/* +++ ERROR AND WARNING MESSAGES +++++++++++++++++++++++++++++++++++++++++++ */
+
+/* Frontend error message */
+
+.errorMsg {
+	color: #e00034;
+	font-weight: normal;
+	margin: .325em 0;
+}
+
+.errorMsg a {
+	color: #e00034;
+	text-decoration: underline;
+}
+
+.nowrap .errorMsg {
+	white-space: normal;
+	zoom: 1;
+}
+
+/* table cells including frontend error messages */
+
+tr.errorMsg {
+	background: none;
+}
+
+tr.errorMsg td div.errorMsg {
+	margin: -2px 0 4px 0;
+	position: relative;
+}
+
+tr.mustValidate td {
+	vertical-align: top;
+}
+
+/* Show details of error messages (first invented by MBA) */
+
+.js .toggleErrorMsgDetails {
+	text-decoration: underline;
+	display: inline-block;
+	position: relative;
+	cursor: pointer;
+	padding: 0 !important;
+}
+
+.js .toggleErrorMsgDetails:before {
+	position: absolute;
+	width: 10px !important;
+	height: 10px !important;
+	bottom: -1.25em;
+	left: 1.25em;
+	content: '';
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+	z-index: 2;
+	background-color: #fff;
+	background-image: none !important;
+	box-shadow: -1px -1px 0px 0px #e00034;
+	opacity: 0;
+	transition: opacity .5s .25s ease-in;
+	cursor: default;
+	pointer-events: none; /* Does not work in IE10 and below. */
+	display: inline-block; /* Mandatory for IE11 to recognize the pointer events. */
+}
+
+.js .odd .toggleErrorMsgDetails:before {
+	background-color: #f4f3f2;
+}
+
+.js .showErrorMsgDetails .toggleErrorMsgDetails:before {
+	opacity: 1;
+	transition: opacity .25s ease-in-out;
+}
+
+.js .errorMsgDetails {
+	max-height: 0;
+	overflow: hidden;
+	opacity: 0;
+	transition: all .75s ease-in-out;
+}
+
+.js .showErrorMsgDetails + .errorMsgDetails {
+	max-height: 100em;
+	overflow: visible;
+	opacity: 1;
+}
+
+.errorMsgDetails {
+	display: block;
+}
+
+.errorMsgDetails > .inner {
+	color: #e00034;
+	border: 1px solid #e00034;
+	padding: .75em 1em .5em 1em !important;
+	position: relative;
+	margin-top: 5px;
+}
+
+.errorMsgDetails > .inner * {
+	margin: 0 !important;
+	padding: 0 1em .5em 0 !important;
+}
+
+.errorMsgDetails > .inner:before,
+.errorMsgDetails > .inner *:before {
+	display: none;
+}
+
+/* Backend error message */
+
+.backendError {
+	margin-bottom: 30px;
+	padding: 1.25em 1.5em .75em 1.5em;
+	line-height: 140%;
+	border: 1px solid #e00034;
+}
+
+.backendError h3 {
+	color: #e00034;
+	font-size: 1.23076em;
+	padding-bottom: .5em;
+}
+
+.backendError h3 span {
+	font-weight: normal;
+}
+
+.backendError p {
+	padding-bottom: .5em;
+}
+
+.backendError li {
+	position: relative;
+	padding: 0 1em .5em 1.5em
+}
+
+.backendError li:before {
+	position: absolute;
+	left: 0;
+	content: '\2015\A0';
+}
+
+.backendError a {
+	color: #e00034;
+}
+
+.backendError ul:last-child li {
+	padding-top: .325em;
+	padding-left: 0;
+}
+
+.backendError ul:last-child li:before {
+	content: '';
+}
+
+.backendError ul:last-child li a {
+	padding-left: 1.5em;
+}
+
+.backendError ul:last-child li a:before {
+	position: absolute;
+	left: 0;
+	font-family: 'pfbicons';
+	content: '\e642';
+}
+
+/* Warning message */
+
+.warning {
+	border-color: #ffa100;
+}
+
+.warning h3,
+.warning a {
+	color: #ffa100 !important;
+}
+
+.warning ul.lastChild li a {
+	background: #fff8ed url(../../images/arrows.png) -4px -5495px no-repeat !important;
+}
+
+.formContainer .warning a {
+	background-color: transparent !important;
+}
+
+/* Inline warning message */
+
+.warningMsg {
+	color: #ffa100;
+	margin-top: .25em;
+}
+
+.nowrap .warningMsg {
+	white-space: normal;
+	zoom: 1;
+}
+
+/* Mask input button as a link */
+
+input.linkButton {
+	background: transparent url(../../images/bt_bright_default.png) left center no-repeat;
+	background-size: 0.9em;
+	/*border: none;*/
+	box-shadow: none;
+	/*font: inherit;*/
+	margin: 0;
+	padding: 0 0 0 1.25em;
+	/*line-height:normal;*/
+	cursor: pointer;
+	/*width: auto;
+	overflow: visible;
+	word-wrap: break-word;
+	color: #363f51;*/
+    color: #2282c1;
+}
+
+input.linkButton:hover,
+input.linkButton:focus,
+input.linkButton:active {
+	color: #0098db;
+}
+
+input.linkButton::-moz-focus-inner {
+    border: none;
+    padding: 0;
+}
+
+.errorMsg input.linkButton {
+	background: none;
+	padding: 0;
+	color: #e00034;
+	margin-top: -1px;
+	text-decoration: underline;
+}
+
+/* +++ checkValidity ++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+.checkValidity + .errorMsg,
+.checkValidity + * + .errorMsg {
+	max-height: 0;
+	overflow: hidden;
+	display: block;
+	line-height: 100%;
+	transition: max-height .75s ease;
+}
+
+.checkValidity.validityWarning + .errorMsg,
+.checkValidity.validityFailed + .errorMsg,
+.checkValidity.validityWarning + * + .errorMsg,
+.checkValidity.validityFailed + * + .errorMsg {
+	max-height: 6em;
+}
+
+.checkValidity.validityWarning + .errorMsg,
+.checkValidity.validityWarning + * + .errorMsg {
+	background-image: url('../../images/ic_warning_headline.png');
+	color: #ffa000;
+}
+
+.checkValidity.validityChecking {
+	background: #eceae7 url('../../images/ic_ajaxloader_transparent.gif') right center no-repeat;
+}
+
+.checkValidity.validitySucceeded {
+	background: #eceae7 url('../../images/checkValidity.png') no-repeat;
+	background-position: right .5em center; /*background position needs to be separate otherwise it cannot be overwritten on android tablet */
+	background-size: 16px 16px;
+}
+
+/* +++ hasPasswordStrength ++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+.hasPasswordStrength {
+	position: relative;
+}
+
+.passwordStrengthMeter {
+	background-color: #eceae7;
+	position: absolute;
+	width: 60px;
+	height: 5px;
+	right: 0;
+	top: .5em;
+	z-index: 1;
+	cursor: help;
+}
+
+.passwordStrengthMeter span {
+	position: absolute;
+	width: 0%;
+	height: 100%;
+	-webkit-transition: all .3s ease-in-out;
+	-moz-transition: all .3s ease-in-out;
+	-o-transition: all .3s ease-in-out;
+	-ms-transition: all .3s ease-in-out;
+	transition: all .3s ease-in-out;
+}
+
+.passwordStrengthMeter.extraWeak span {
+	width: 12.5%;
+	background-color: #e00034;
+}
+
+.passwordStrengthMeter.weak span {
+	width: 25%;
+	background-color: #e00034;
+}
+
+.passwordStrengthMeter.medium span {
+	width: 50%;
+	background-color: #ffa000;
+}
+
+.passwordStrengthMeter.strong span {
+	width: 75%;
+	background-color: #ffa000;
+}
+
+.passwordStrengthMeter.extraStrong span {
+	width: 100%;
+	background-color: #7ab800;
+}
+
+/* +++ ANNOTATIONS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+.hasAnnotation {
+	position: relative;
+}
+
+.annotationContainer {
+	position: absolute;
+	display: block;
+	max-height: 0;
+	overflow: hidden;
+	opacity: 0;
+	z-index: 9999;
+	margin: .4em 0 0 0;
+	padding: 0;
+	width: 70%;
+	right: 0;
+	line-height: normal;
+	font-weight: normal;
+	background-color: #fff;
+	border-radius: 2px;
+	box-shadow: 0 1px 4px rgba(0,0,0,.35);
+}
+
+.hasAnnotation.rgtPaddingS .annotationContainer {
+	right: .75em;
+}
+
+.hasAnnotationWithTrigger .annotationContainer {
+	width: 80%;
+	left: 10%;
+	right: 10%;
+
+	/*max-height: 100em;
+	overflow: visible;
+	opacity: 1;
+	transition: opacity .25s .125s ease-in-out;*/
+}
+
+.hasAnnotation .annotationContainer:hover,
+.hasAnnotation input:focus + .annotationContainer,
+.hasAnnotation select:focus + .annotationContainer,
+.hasAnnotation a.annotationTrigger:focus ~ .annotationContainer,
+.hasAnnotation button.annotationTriggerOn:focus ~ .annotationContainer {
+	max-height: 100em;
+	overflow: visible;
+	opacity: 1;
+	transition: opacity .25s .125s ease-in-out;
+}
+
+button.annotationTriggerOn,
+button.annotationTriggerOff {
+	position: absolute;
+	z-index: 1;
+	cursor: pointer;
+	background: transparent url(../../images/ic_help.gif) no-repeat;
+	width: 15px;
+	height: 15px;
+	-webkit-appearance: none;
+	border: none;
+	outline: none;
+	text-indent: -999em;
+	margin: -.125em 0 0 .25em;
+	overflow: visible; /* Mandatory for IE */
+}
+
+button.annotationTriggerOn {
+	z-index: 2;
+}
+
+button.annotationTriggerOn:focus {
+	z-index: 1;
+}
+
+.annotationContainer:before,
+.annotationContainer:after {
+	position: absolute;
+	content: '';
+	width: .8em;
+	height: .8em;
+	background-color: inherit;
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+	box-shadow: 0 0 2px rgba(0,0,0,.35);
+}
+
+.annotationContainer:before {
+	right: calc(50% - .4em);
+	top: -.4em;
+}
+
+.annotationContainer:after {
+	-webkit-transform: rotate(0deg);
+	transform: rotate(0deg);
+	box-shadow: none;
+	width: 2em;
+	right: calc(50% - 1em);
+	top: 0;
+}
+
+button.annotationTriggerOn ~ .annotationContainer {
+	margin-top: .75em;
+}
+
+button.annotationTriggerOn ~ .annotationContainer:before {
+	display: none;
+}
+
+a.annotationTrigger ~ .annotationContainer {
+	margin-top: 1em;
+	left: 0;
+	width: 100%;
+}
+
+a.annotationTrigger ~ .annotationContainer:before {
+	right: auto;
+	left: 1.5em;
+}
+
+a.annotationTrigger ~ .annotationContainer:after {
+	right: auto;
+	left: 1em;
+}
+
+a.annotationTrigger.button {
+	padding: 0.6em 2.625em .6em 1em;
+	position: relative;
+}
+
+a.annotationTrigger.button:before {
+	position: absolute;
+	font-family: 'pfbicons';
+	content: '\e642';
+	color: #fff;
+	right: 1.125em;
+	top: .625em;
+}
+
+.annotationContainer > .inner {
+	display: block;
+	padding: 1em 1em 1.25em 1em;
+}
+
+.annotationContainer > .inner .annotationHead,
+.annotationContainer > .inner .annotationBody,
+.annotationContainer > .inner .annotationBody span {
+	display: block;
+}
+
+.annotationContainer > .inner .annotationHead {
+	color: #133C7F;
+	padding-bottom: .875em;
+}
+
+.annotationContainer > .inner .annotationBody span {
+	padding-top: .5em;
+	line-height: 140%;
+}
+
+.annotationContainer > .inner .annotationBody span:first-child {
+	padding-top: 0;
+}
+
+.annotationContainer > .inner .annotationBody span.annotationLI {
+	padding-left: 1.5em;
+}
+
+.annotationContainer > .inner .annotationBody span.annotationLI:before {
+	position: absolute;
+	left: 1em;
+	content: '\2015\A0';
+}
+
+.annotationActions {
+	padding-top: 1em !important;
+}
+
+.annotationActions a {
+	display: inline-block;
+    background: #2282C1;
+    color: #fff;
+    cursor: pointer;
+    padding: 0 1em;
+    line-height: 2.46153em;
+    text-decoration: none;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0,0,0,.35);
+	transition: background .2s ease;
+}
+
+.annotationActions a:hover {
+	background: #0098db;
+}
+
+.annotationActions a.closeAnnotation {
+	background-color: transparent;
+	color: #2282C1 !important;
+	margin-left: .5em !important;
+}
+
+.annotationClosed .annotationContainer {
+	max-height: 0 !important;
+	overflow: hidden !important;
+	opacity: 0 !important;
+}
+
+/* +++ TOGGLE CONTENT OF A SELECTION ++++++++++++++++++++++++++++++++++++++++ */
+
+.toggleSelectedOption {
+	padding-bottom: 1.25em;
+	position: relative;
+}
+
+.toggleSelectedOption input.radio {
+	position: absolute;
+	/*margin-top: -.125em;*/
+}
+
+.toggleSelectedOption input.radio + label {
+	padding-left: 1.5em;
+	display: inline-block;
+}
+
+.toggleSelectedOption input.radio ~ div.toggleSelectedOptionContent {
+	display: none;
+}
+
+.toggleSelectedOption input.radio:checked ~ div.toggleSelectedOptionContent {
+	display: block;
+}
+
+.toggleSelectedOption:last-child input.radio:checked ~ div.toggleSelectedOptionContent {
+	margin-bottom: -1em;
+}
+
+.toggleSelectedOptionContent {
+	padding: .75em 0 0 1.5em;
+}
+
+@supports (-moz-appearance:meterbar) { /* FF16+ */
+	.toggleSelectedOptionContent,
+	.toggleSelectedOption input.radio + label {
+		padding-left: 1.75em;
+	}
+}
+
+/* +++ SLIDERS (based on nouislider 8.5.1) ++++++++++++++++++++++++++++++++++ */
+
+/* nouislider.min.css */
+.noUi-target,.noUi-target *{-webkit-touch-callout:none;-webkit-user-select:none;-ms-touch-action:none;touch-action:none;-ms-user-select:none;-moz-user-select:none;user-select:none;-moz-box-sizing:border-box;box-sizing:border-box}.noUi-target{position:relative;direction:ltr}.noUi-base{width:100%;height:100%;position:relative;z-index:1}.noUi-origin{position:absolute;right:0;top:0;left:0;bottom:0}.noUi-handle{position:relative;z-index:1}.noUi-stacking .noUi-handle{z-index:10}.noUi-state-tap .noUi-origin{-webkit-transition:left .3s,top .3s;transition:left .3s,top .3s}.noUi-state-drag *{cursor:inherit!important}.noUi-base,.noUi-handle{-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}.noUi-horizontal{height:18px}.noUi-horizontal .noUi-handle{width:34px;height:28px;left:-17px;top:-6px}.noUi-vertical{width:18px}.noUi-vertical .noUi-handle{width:28px;height:34px;left:-6px;top:-17px}.noUi-background{background:#FAFAFA;box-shadow:inset 0 1px 1px #f0f0f0}.noUi-connect{background:#3FB8AF;box-shadow:inset 0 0 3px rgba(51,51,51,.45);-webkit-transition:background 450ms;transition:background 450ms}.noUi-origin{border-radius:2px}.noUi-target{border-radius:4px;border:1px solid #D3D3D3;box-shadow:inset 0 1px 1px #F0F0F0,0 3px 6px -5px #BBB}.noUi-target.noUi-connect{box-shadow:inset 0 0 3px rgba(51,51,51,.45),0 3px 6px -5px #BBB}.noUi-draggable{cursor:w-resize}.noUi-vertical .noUi-draggable{cursor:n-resize}.noUi-handle{border:1px solid #D9D9D9;border-radius:3px;background:#FFF;cursor:default;box-shadow:inset 0 0 1px #FFF,inset 0 1px 7px #EBEBEB,0 3px 6px -3px #BBB}.noUi-active{box-shadow:inset 0 0 1px #FFF,inset 0 1px 7px #DDD,0 3px 6px -3px #BBB}.noUi-handle:after,.noUi-handle:before{content:"";display:block;position:absolute;height:14px;width:1px;background:#E8E7E6;left:14px;top:6px}.noUi-handle:after{left:17px}.noUi-vertical .noUi-handle:after,.noUi-vertical .noUi-handle:before{width:14px;height:1px;left:6px;top:14px}.noUi-vertical .noUi-handle:after{top:17px}[disabled] .noUi-connect,[disabled].noUi-connect{background:#B8B8B8}[disabled] .noUi-handle,[disabled].noUi-origin{cursor:not-allowed}.noUi-pips,.noUi-pips *{-moz-box-sizing:border-box;box-sizing:border-box}.noUi-pips{position:absolute;color:#999}.noUi-value{position:absolute;text-align:center}.noUi-value-sub{color:#ccc;font-size:10px}.noUi-marker{position:absolute;background:#CCC}.noUi-marker-large,.noUi-marker-sub{background:#AAA}.noUi-pips-horizontal{padding:10px 0;height:80px;top:100%;left:0;width:100%}.noUi-value-horizontal{-webkit-transform:translate3d(-50%,50%,0);transform:translate3d(-50%,50%,0)}.noUi-marker-horizontal.noUi-marker{margin-left:-1px;width:2px;height:5px}.noUi-marker-horizontal.noUi-marker-sub{height:10px}.noUi-marker-horizontal.noUi-marker-large{height:15px}.noUi-pips-vertical{padding:0 10px;height:100%;top:0;left:100%}.noUi-value-vertical{-webkit-transform:translate3d(0,-50%,0);transform:translate3d(0,-50%,0);padding-left:25px}.noUi-marker-vertical.noUi-marker{width:5px;height:2px;margin-top:-1px}.noUi-marker-vertical.noUi-marker-sub{width:10px}.noUi-marker-vertical.noUi-marker-large{width:15px}.noUi-tooltip{display:block;position:absolute;border:1px solid #D9D9D9;border-radius:3px;background:#fff;padding:5px;text-align:center}.noUi-horizontal .noUi-handle-lower .noUi-tooltip{top:-32px}.noUi-horizontal .noUi-handle-upper .noUi-tooltip{bottom:-32px}.noUi-vertical .noUi-handle-lower .noUi-tooltip{left:120%}.noUi-vertical .noUi-handle-upper .noUi-tooltip{right:120%}
+
+/* Customizing */
+
+body:not(.js) .sliderContainer {
+	display: none;
+}
+
+.sliderContainer .slider {
+	height: 18px;
+	padding: 9px 18px;
+	border-radius: 36px;
+	background-color: #eceaeb;
+	box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2);
+	cursor: pointer;
+}
+
+.sliderContainer .slider > .inner,
+.sliderContainer .slider > .inner .noUi-background {
+	background: transparent;
+	border-color: transparent;
+	box-shadow: none;
+}
+
+.sliderContainer .slider > .inner.noUi-connect:before,
+.sliderContainer .slider > .inner .noUi-origin:before {
+	position: absolute;
+	top: 7px;
+	content: '';
+	width: 100%;
+	height: 2px;
+	background-color: #fff;
+	border-radius: 2px;
+}
+
+.sliderContainer .slider > .inner .noUi-origin:before {
+	background-color: #c5c5c5;
+}
+
+.sliderContainer .slider > .inner .noUi-handle {
+	width: 24px;
+	height: 24px;
+	border-radius: 24px;
+	left: -12px;
+	top: -4px;
+	border: none;
+	cursor: w-resize;
+	background-color: #2282c1;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.sliderContainer .slider > .inner .noUi-handle:after {
+	display: none;
+}
+
+.sliderContainer .slider > .inner .noUi-handle:before {
+	left: 9px;
+	top: 9px;
+	width: 6px;
+	height: 6px;
+	border-radius: 6px;
+	background: #fff;
+	box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.35);
+}
+
+.sliderContainer.hasStepper .slider {
+	border-radius: 0;
+}
+
+.sliderContainer.hasStepper {
+	position: relative;
+	box-sizing: border-box;
+}
+
+.sliderContainer.hasStepper > div {
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.sliderContainer.hasStepper div.slider {
+	position: relative;
+	margin: 0 36px;
+	z-index: 1;
+}
+
+.sliderContainer.hasStepper div.slider:before,
+.sliderContainer.hasStepper div.slider:after {
+	position: absolute;
+	content: '';
+	left: -1px;
+	top: 0;
+	width: 2px;
+	height: 36px;
+	background-color: #fff;
+}
+
+.sliderContainer.hasStepper div.slider:after {
+	left: auto;
+	right: -1px;
+}
+
+.sliderContainer.hasStepper .sliderStepper {
+	width: 36px;
+	height: 36px;
+	border-radius: 36px;
+	box-sizing: border-box;
+	cursor: pointer;
+	background-color: #eceaeb;
+	box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.sliderContainer.hasStepper .sliderStepper:first-child {
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+.sliderContainer.hasStepper .sliderStepper:last-child {
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+	left: auto;
+	right: 0;
+}
+
+.sliderContainer.hasStepper .sliderStepper:before {
+	font: normal 12px 'pfbicons';
+	content: '\e65b';
+	color: #2282C1;
+	display: block;
+	text-align: center;
+	width: 14px;
+	height: 14px;
+	margin: 12px 0 0 13px;
+}
+
+.sliderContainer.hasStepper .sliderStepper:last-child:before {
+	content: '\e65a';
+	margin-left: 10px;
+}

